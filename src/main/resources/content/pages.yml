@@ -1,0 +1,326 @@
+# Content registry: the single source for routes, page titles, breadcrumbs, the sitemap,
+# search and 301 redirects from the legacy PHP URLs.
+#
+#   id            stable key referenced from navigation / footer / parent
+#   path          new URL (relative to the context path)
+#   title         <h1>, <title>, menu label, breadcrumb
+#   description   one sentence; used for <meta name="description"> and search results
+#   template      Thymeleaf template; omit while the page is still awaiting migration
+#   parent        page id used for breadcrumbs when the page is not in the global navigation
+#   last-updated  shown in the footer as "Last Updated On" (DBIM 5.6). Content carried over unchanged
+#                 from the legacy site keeps that site's last stated update, 11 February 2020.
+#   legacy        old PHP paths that 301-redirect here (album pages are listed in albums.yml)
+content:
+  pages:
+    # --- Home ---------------------------------------------------------------------------------
+    - id: home
+      path: /
+      title: "Home"
+      description: "Krishi Vigyan Kendra, East Khasi Hills — farm science centre of the Department of Agriculture and Farmers' Welfare, Government of Meghalaya."
+      template: pages/home
+      last-updated: 2026-10-16
+      legacy: [/index.php]
+
+    # --- About KVK ----------------------------------------------------------------------------
+    - id: about-kvk
+      path: /about/kvk
+      title: "About KVK"
+      description: "What a Krishi Vigyan Kendra is and how it trains farmers through teaching by doing."
+      template: pages/about/kvk
+      last-updated: 2020-02-11
+      legacy: [/content/aboutus.php]
+    - id: objectives
+      path: /about/objectives
+      title: "Objectives"
+      description: "Objectives of Krishi Vigyan Kendra, East Khasi Hills."
+      template: pages/about/objectives
+      last-updated: 2020-02-11
+      legacy: [/content/objective.php]
+    - id: mandate
+      path: /about/mandate
+      title: "Mandate"
+      description: "Mandate of the KVK: on-farm testing, training, and frontline demonstrations."
+      template: pages/about/mandate
+      last-updated: 2020-02-11
+      legacy: [/content/mandate.php]
+    - id: host-organisation
+      path: /about/host-organisation
+      title: "Host Organisation"
+      description: "The KVK is hosted by the Department of Agriculture, Government of Meghalaya."
+      template: pages/about/host-organisation
+      last-updated: 2020-02-11
+      legacy: [/content/hostorganisation.php]
+    - id: staff
+      path: /about/staff
+      title: "Staff Position"
+      description: "Scientists, subject matter specialists and staff of the KVK."
+      template: pages/about/staff
+      last-updated: 2020-02-11
+      legacy: [/content/staffposition.php]
+    - id: district-profile
+      path: /about/district-profile
+      title: "District Profile"
+      description: "Profile of East Khasi Hills district: area, population, climate and how to reach the KVK."
+      template: pages/about/district-profile
+      last-updated: 2020-02-11
+      legacy: [/content/districtinfo.php]
+    - id: major-farming-systems
+      path: /about/major-farming-systems
+      title: "Major Farming Systems"
+      description: "Farming systems and enterprises identified in East Khasi Hills."
+      template: pages/about/major-farming-systems
+      last-updated: 2020-02-11
+      legacy: [/content/majorfarmingsystem.php]
+    - id: priority-thrust-areas
+      path: /about/priority-thrust-areas
+      title: "Priority Thrust Areas"
+      description: "Ranked priority thrust areas of the KVK."
+      template: pages/about/priority-thrust-areas
+      last-updated: 2020-02-11
+      legacy: [/content/prioritythrustarea.php]
+
+    # --- Activities ---------------------------------------------------------------------------
+    - id: training
+      path: /activities/training
+      title: "Training"
+      description: "Training areas for farmers, rural youth and extension personnel."
+      template: pages/activities/training
+      last-updated: 2020-02-11
+      legacy: [/content/training.php]
+    - id: on-farm-trials
+      path: /activities/on-farm-trials
+      title: "On-Farm Trials"
+      description: "On-farm trials (OFT) on crops and extension, and what on-farm testing is."
+      template: pages/activities/on-farm-trials
+      last-updated: 2020-02-11
+      legacy: [/content/onfarmtrails.php, /content/oft.php]
+    - id: frontline-demonstrations
+      path: /activities/frontline-demonstrations
+      title: "Frontline Demonstrations"
+      description: "Frontline demonstrations (FLD) on crops and extension, and how field demonstrations are conducted."
+      template: pages/activities/frontline-demonstrations
+      last-updated: 2020-02-11
+      legacy: [/content/frontlinedemonstration.php, /content/fld.php]
+    - id: extension-activities
+      path: /activities/extension-activities
+      title: "Other Extension Activities"
+      description: "Field days, kisan melas, camps, exposure visits and other extension activities."
+      template: pages/activities/extension-activities
+      last-updated: 2020-02-11
+      legacy: [/content/extensionactivities.php]
+
+    # --- Documents ----------------------------------------------------------------------------
+    - id: publications
+      path: /documents/publications
+      title: "Publications and Annual Reports"
+      description: "Annual reports and extension leaflets in English and Khasi."
+      template: pages/documents/publications
+      last-updated: 2026-10-16
+      legacy: [/content/publication.php]
+    - id: newsletters
+      path: /documents/newsletters
+      title: "Newsletters"
+      description: "Half-yearly newsletters of the KVK, 2010 to 2013."
+      template: pages/documents/newsletters
+      last-updated: 2026-10-16
+      legacy: [/content/newsletter.php]
+    - id: archive
+      path: /documents/archive
+      title: "Archive"
+      description: "Notices and documents that are no longer current, with the date they were archived."
+      template: pages/documents/archive
+      last-updated: 2026-10-16
+    - id: sale
+      path: /documents/sale
+      title: "Sale of KVK Produce"
+      description: "Seedlings and cut flowers on sale at the KVK, with prices."
+      template: pages/documents/sale
+      last-updated: 2020-02-11
+      legacy: [/content/sale.php]
+    # --- Success stories ----------------------------------------------------------------------
+    - id: success-stories
+      path: /stories
+      title: "All Success Stories"
+      description: "Success stories of farmers supported by KVK East Khasi Hills."
+      template: pages/stories/index
+      last-updated: 2020-02-11
+      legacy: [/content/successstories.php]
+    - id: story-cauliflower
+      path: /stories/cauliflower
+      title: "Cauliflower Seed Production"
+      description: "A self-help group in Sadew village produced cauliflower seed in a low-cost polyhouse."
+      template: pages/stories/cauliflower
+      last-updated: 2020-02-11
+      legacy: [/content/cauliflowerstories.php]
+    - id: story-maize-cropping
+      path: /stories/maize-cropping
+      title: "Maize and French Bean Intercropping"
+      description: "Intercropping French bean with maize gave a farmer in Laitjem a benefit-cost ratio of 3.01."
+      template: pages/stories/maize-cropping
+      last-updated: 2020-02-11
+      legacy: [/content/maizecroppingstories.php]
+    - id: story-maize-cultivation
+      path: /stories/maize-cultivation
+      title: "Quality Protein Maize Cultivation"
+      description: "Hybrid quality protein maize (HQPM-1) almost quadrupled maize yields in Dangar village."
+      template: pages/stories/maize-cultivation
+      last-updated: 2020-02-11
+      legacy: [/content/maizecultivationstories.php]
+    - id: story-kisan-mela
+      path: /stories/kisan-mela
+      title: "Kisan Mela, January 2014"
+      description: "Three-day kisan mela cum training programme at Upper Shillong, January 2014."
+      template: pages/stories/kisan-mela
+      last-updated: 2020-02-11
+      legacy: [/content/kisanMelaStories.php]
+
+    # --- Gallery (albums and their legacy URLs are in albums.yml) -----------------------------
+    - id: gallery
+      path: /gallery
+      title: "Media"
+      description: "Photographs of KVK activities, crops, demonstrations and events."
+      last-updated: 2026-10-16
+      legacy: [/content/photogallery.php]
+
+    # --- Connect ------------------------------------------------------------------------------
+    - id: contact-us
+      path: /contact-us
+      title: "Contact Us"
+      description: "Address, phone and email of KVK East Khasi Hills and its web managers."
+      template: pages/contact-us
+      last-updated: 2020-02-11
+      legacy: [/content/contactus.php]
+    - id: feedback
+      path: /feedback
+      title: "Feedback"
+      description: "Send a question, suggestion or complaint to KVK East Khasi Hills."
+      template: pages/feedback
+      last-updated: 2026-10-16
+      legacy: [/feedback.php]
+    - id: related-links
+      path: /related-links
+      title: "Related Links"
+      description: "Websites of related government departments and KVKs."
+      template: pages/related-links
+      last-updated: 2026-10-16
+
+    # --- GIGW / DBIM mandatory pages ----------------------------------------------------------
+    - id: sitemap
+      path: /sitemap
+      title: "Sitemap"
+      template: pages/sitemap
+      last-updated: 2026-10-16
+      legacy: [/sitemap.php]
+    - id: search
+      path: /search
+      title: "Search"
+      template: pages/search
+      last-updated: 2026-10-16
+    - id: help
+      path: /help
+      title: "Help"
+      description: "How to use the accessibility controls and open documents on this website."
+      template: pages/help/index
+      last-updated: 2026-10-16
+      legacy: [/help.php]
+    - id: screen-reader-access
+      path: /help/screen-reader-access
+      title: "Screen Reader Access"
+      description: "Screen readers that can be used with this website."
+      template: pages/help/screen-reader-access
+      parent: help
+      last-updated: 2026-10-16
+      legacy: [/screen-reader-access.php]
+    - id: accessible-browsers
+      path: /help/accessibility-options-in-browsers
+      title: "Accessibility Options in Browsers"
+      description: "How to change text size, contrast and zoom in your web browser."
+      template: pages/help/accessible-browsers
+      parent: help
+      last-updated: 2026-10-16
+      legacy: [/accessible-browsers.php]
+    - id: accessibility-statement
+      path: /help/accessibility-statement
+      title: "Accessibility Statement"
+      description: "Our commitment to making this website accessible to everyone."
+      template: pages/help/accessibility-statement
+      parent: help
+      last-updated: 2026-10-16
+      legacy: [/accessibility-statement.php]
+    - id: website-policies
+      path: /policies
+      title: "Website Policies"
+      template: pages/policies
+      last-updated: 2026-10-16
+    - id: terms
+      path: /policies/terms-and-conditions
+      title: "Terms and Conditions"
+      template: pages/policies/terms
+      parent: website-policies
+      last-updated: 2026-10-16
+      legacy: [/termsconditions.php]
+    - id: privacy
+      path: /policies/privacy
+      title: "Privacy Policy"
+      template: pages/policies/privacy
+      parent: website-policies
+      last-updated: 2026-10-16
+      legacy: [/privacypolicy.php]
+    - id: copyright
+      path: /policies/copyright
+      title: "Copyright Policy"
+      template: pages/policies/copyright
+      parent: website-policies
+      last-updated: 2026-10-16
+      legacy: [/copyright.php]
+    - id: hyperlinking
+      path: /policies/hyperlinking
+      title: "Hyperlinking Policy"
+      template: pages/policies/hyperlinking
+      parent: website-policies
+      last-updated: 2026-10-16
+      legacy: [/hyperlinkpolicy.php]
+    - id: disclaimer
+      path: /policies/disclaimer
+      title: "Disclaimer"
+      template: pages/policies/disclaimer
+      parent: website-policies
+      last-updated: 2026-10-16
+      legacy: [/disclaimer.php]
+    # GIGW 3.0 website policies — drafts, to be approved by the Department before go-live.
+    - id: cmap
+      path: /policies/content-contribution-moderation-approval
+      title: "Content Contribution, Moderation and Approval Policy"
+      template: pages/policies/cmap
+      parent: website-policies
+      last-updated: 2026-10-16
+    - id: content-archival
+      path: /policies/content-archival
+      title: "Content Archival Policy"
+      template: pages/policies/content-archival
+      parent: website-policies
+      last-updated: 2026-10-16
+    - id: content-review
+      path: /policies/content-review
+      title: "Content Review Policy"
+      template: pages/policies/content-review
+      parent: website-policies
+      last-updated: 2026-10-16
+    - id: website-monitoring
+      path: /policies/website-monitoring
+      title: "Website Monitoring Policy"
+      template: pages/policies/website-monitoring
+      parent: website-policies
+      last-updated: 2026-10-16
+    - id: contingency-management
+      path: /policies/contingency-management
+      title: "Contingency Management Plan"
+      template: pages/policies/contingency-management
+      parent: website-policies
+      last-updated: 2026-10-16
+    - id: security-policy
+      path: /policies/security
+      title: "Security Policy"
+      template: pages/policies/security
+      parent: website-policies
+      last-updated: 2026-10-16

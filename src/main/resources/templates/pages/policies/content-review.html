@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Content on this website is reviewed to keep it accurate and current. Each page shows the date it was last
+            updated at the foot of the page.</p>
+        <div class="table-scroll" role="region" tabindex="0" aria-label="Review schedule">
+            <table>
+                <caption>Review schedule</caption>
+                <thead>
+                <tr><th scope="col">Content</th><th scope="col">Reviewed</th></tr>
+                </thead>
+                <tbody>
+                <tr><th scope="row">What's New (notices, advertisements)</th><td>Weekly, and when a notice expires</td></tr>
+                <tr><th scope="row">Contact details and staff position</th><td>Monthly, and whenever staff change</td></tr>
+                <tr><th scope="row">Activities, publications, photo gallery</th><td>Every three months</td></tr>
+                <tr><th scope="row">About the KVK, policies, help pages</th><td>Every six months</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The review is carried out by the Web Content Manager and approved under the
+            <a th:href="@{/policies/content-contribution-moderation-approval}">content contribution, moderation and
+            approval policy</a>. Broken links reported through the <a th:href="@{/feedback}">feedback form</a> are
+            corrected as soon as possible.</p>
+    </div>
+</th:block>
+</body>
+</html>

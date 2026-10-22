@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<!--/* Shown for registry pages that have no template yet (migration in progress). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="notice">The content of this page is being moved to the new website and will be available shortly.</p>
+    <p>Meanwhile, see the <a th:href="@{/sitemap}">sitemap</a> or <a th:href="@{/contact-us}">contact us</a>.</p>
+</th:block>
+</body>
+</html>

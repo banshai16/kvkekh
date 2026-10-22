@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Maize is the second most important cereal in Meghalaya, with an average yield of 1.5 tonnes per hectare in
+            2010-11. It is used as human food (28 per cent), animal feed (11 per cent), poultry feed (48 per cent) and
+            industrial products (12 per cent), and is a good source of carbohydrates, protein, fats and important
+            vitamins and minerals. However, the local variety grown in Dangar, a small village on the Indo-Bangladesh
+            border in Mawsynram C&amp;RD Block, gave production and yield well below the national average, with
+            poor-quality protein — a major concern for the KVK.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/maize.jpg}"
+                 alt="A tall, healthy stand of maize in a farmer's field">
+            <figcaption>Hybrid quality protein maize in the field.</figcaption>
+        </figure>
+
+        <p>The KVK introduced Hybrid Quality Protein Maize (HQPM-1) through on-farm trials with a number of
+            progressive farmers in the village. The objectives were to increase yield and make quality protein available
+            to farmers; as a crop for both kharif and rabi seasons, it could also provide year-round income, and good
+            quality protein when used as livestock feed. Trainings, method demonstrations and film shows were conducted
+            to motivate farmers to adopt the new technology.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/maize2.jpg}"
+                 alt="Harvested maize cobs with deep orange kernels, husks pulled back">
+            <figcaption>Harvested HQPM-1 cobs.</figcaption>
+        </figure>
+
+        <h2>Results</h2>
+        <dl class="facts">
+            <dt>Average yield</dt><dd>5.792 tonnes per hectare — almost four times that of the local variety</dd>
+            <dt>Cost of cultivation</dt><dd>₹41,317.74</dd>
+            <dt>Net return</dt><dd>₹36,082.26</dd>
+            <dt>Benefit-cost ratio</dt><dd class="num">1.87</dd>
+        </dl>
+        <p>The stover provided feed for livestock and material for compost for the next crop. Considering the benefits
+            and the farmers' acceptance of the technology, the KVK decided to conduct demonstrations the following year
+            to popularise the variety.</p>
+    </div>
+</th:block>
+</body>
+</html>

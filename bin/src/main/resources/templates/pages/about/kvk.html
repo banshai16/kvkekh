@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Krishi Vigyan Kendra is an innovative institution with a multidisciplinary team of subject matter
+            specialists for taking up various frontline programmes in agricultural and allied sectors. These include
+            on-farm testing to identify the location specificity of technology, frontline demonstrations to establish
+            its production potential on farmers' fields, training of farmers to update their knowledge and skills, and
+            training of extension personnel to orient them in the frontier areas of technology development.</p>
+        <p>Each KVK has an instructional farm developed so that it is educational as well as profitable. The
+            instructional farm helps in conducting the training programmes by following the principles of
+            "Teaching by Doing" and "Learning by Doing".</p>
+        <p>KVKs provide training not only in agriculture and allied vocations but also in other income-generating
+            activities that may supplement the income of farm families. The methods employed in training can be
+            formal, non-formal or a combination of both depending upon the needs, but the emphasis remains on work
+            experience, as suggested by the Mohan Singh Mehta Committee Report: "the programme should be operated
+            as a plan of continuing education both in the technical and in the general sense".</p>
+
+        <h2>Learn more</h2>
+        <ul>
+            <li><a th:href="@{/about/objectives}">Objectives</a></li>
+            <li><a th:href="@{/about/mandate}">Mandate</a></li>
+            <li><a th:href="@{/about/host-organisation}">Host organisation</a></li>
+            <li><a th:href="@{/about/district-profile}">District profile</a></li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

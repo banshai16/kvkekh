@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--/*
+  Shared page layout. Usage from a page template:
+    <html th:replace="~{fragments/layout :: layout(~{::content})}">
+      <body><th:block th:fragment="content"> ... </th:block></body>
+    </html>
+  Interior pages get the page head (breadcrumb + h1) and optional "In this section" navigation;
+  the home page supplies its own structure.
+*/-->
+<html lang="en" th:fragment="layout(content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${page == null or page.id == 'home'} ? ${site.name} : ${page.title + ' | ' + site.name}">KVK East Khasi Hills</title>
+    <meta name="description" th:if="${page != null and page.description != null}" th:content="${page.description}">
+    <link rel="icon" th:href="@{/assets/img/favicon.svg}" type="image/svg+xml">
+    <link rel="preload" th:href="@{/assets/fonts/noto-sans-latin-var.woff2}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" th:href="@{/assets/css/dbim.css}">
+    <script th:src="@{/assets/js/a11y-init.js}"></script>
+    <script th:src="@{/assets/js/site.js}" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<th:block th:replace="~{fragments/cookie-banner :: cookie-banner}"></th:block>
+
+<th:block th:replace="~{fragments/header :: header}"></th:block>
+
+<main id="main" tabindex="-1">
+    <th:block th:if="${page != null and page.id == 'home'}" th:insert="${content}"></th:block>
+
+    <th:block th:unless="${page != null and page.id == 'home'}">
+        <div class="page-head">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb" th:if="${breadcrumbs != null and !breadcrumbs.isEmpty()}">
+                    <ol>
+                        <li th:each="crumb : ${breadcrumbs}">
+                            <a th:if="${crumb.path != null}" th:href="@{${crumb.path}}" th:text="${crumb.label}">Home</a>
+                            <span th:if="${crumb.path == null and !crumbStat.last}" th:text="${crumb.label}">Section</span>
+                            <span th:if="${crumbStat.last}" aria-current="page" th:text="${crumb.label}">Page</span>
+                        </li>
+                    </ol>
+                </nav>
+                <h1 th:text="${page != null} ? ${page.title} : (${status == 404} ? 'Page not found' : 'Sorry, something went wrong')">Page title</h1>
+
+                <!--/* DBIM Annexure A (Figures 75-76): links to the other pages of this section sit in a bar under the
+                       page title, inside the banner, instead of a left sidebar. */-->
+                <nav class="section-tabs" th:if="${section != null}" aria-labelledby="section-nav-title">
+                    <h2 id="section-nav-title" class="visually-hidden" th:text="${'In ' + section.label}">In this section</h2>
+                    <ul>
+                        <li th:if="${section.path != null}">
+                            <a th:href="@{${section.path}}" th:text="${section.label}"
+                               th:aria-current="${section.path == currentPath} ? 'page'">Section</a>
+                        </li>
+                        <li th:each="item : ${section.children}">
+                            <a th:href="@{${item.path}}" th:text="${item.label}"
+                               th:aria-current="${item.path == currentPath} ? 'page'">Page</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container page-body">
+            <article>
+                <th:block th:insert="${content}"></th:block>
+            </article>
+        </div>
+    </th:block>
+</main>
+
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

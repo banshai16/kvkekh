@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>This website is designed and developed by the National Informatics Centre (NIC), Meghalaya State Centre.
+            The content is owned by the Department of Agriculture and Farmers' Welfare, Government of Meghalaya, and
+            maintained by Krishi Vigyan Kendra, East Khasi Hills.</p>
+        <p>Though all efforts have been made to ensure the accuracy and currency of the content on this website, it
+            should not be construed as a statement of law or used for any legal purpose. In case of any ambiguity or
+            doubt, users are advised to verify the information with the Department and/or other sources, and to obtain
+            appropriate professional advice.</p>
+        <p>Details such as telephone numbers and the names of officers holding a post may change before they are
+            updated on the website. We therefore do not assume any legal liability for the completeness, accuracy or
+            usefulness of the content provided.</p>
+        <p>Certain links on this website lead to resources on servers maintained by other parties, over whom we have no
+            control. We accept no responsibility or liability for any material on those servers. Links to external
+            websites do not constitute an endorsement of the information, products or services they offer. Despite our
+            best efforts, we do not warrant that the documents on this website are free from computer viruses.</p>
+        <p>This website also links to websites of Government ministries, departments, organisations and districts,
+            whose content is owned by the respective organisations. The Department of Agriculture and Farmers' Welfare,
+            Government of Meghalaya, will not be responsible for any decision taken on the basis of information on this
+            website, or for any information that may be inadvertently incorrect.</p>
+        <p>Links to other websites are added after verification. An apparently broken link may be due to network
+            congestion, service provider downtime or other causes beyond our control; please try again later. If a link
+            does not work on at least two separate occasions, or a linked page has been removed or moved, please let us
+            know through the <a th:href="@{/feedback}">feedback form</a> or by <a th:href="@{/contact-us}">contacting us</a>.</p>
+    </div>
+</th:block>
+</body>
+</html>

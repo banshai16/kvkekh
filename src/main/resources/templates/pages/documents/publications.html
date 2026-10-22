@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">Annual reports and extension leaflets published by the KVK. All documents are PDF files; see
+        <a th:href="@{/help}">Help</a> if you need a PDF reader.</p>
+    <th:block th:each="id : ${ {'annual-reports', 'leaflets', 'leaflets-khasi', 'success-stories'} }"
+              th:with="collection=${docs.get(id)}">
+        <h2 th:text="${collection.title}">Annual Reports</h2>
+        <th:block th:replace="~{fragments/documents :: list(${collection.current})}"></th:block>
+    </th:block>
+</th:block>
+</body>
+</html>

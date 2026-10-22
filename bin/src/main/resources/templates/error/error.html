@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>We could not complete your request. Please try again later, or return to the <a th:href="@{/}">home page</a>.</p>
+        <p>If the problem continues, please <a th:href="@{/contact-us}">contact us</a>.</p>
+    </div>
+</th:block>
+</body>
+</html>

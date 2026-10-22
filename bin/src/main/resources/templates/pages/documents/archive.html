@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">Notices and documents that are no longer current are kept here for reference, with the date
+        they were archived. See the <a th:href="@{/policies/content-archival}">content archival policy</a>.</p>
+    <th:block th:each="entry : ${docs}" th:with="collection=${entry.value}">
+        <th:block th:unless="${collection.archived.isEmpty()}">
+            <h2 th:text="${collection.title}">What's New</h2>
+            <ul class="doc-list">
+                <li th:each="d : ${collection.archived}">
+                    <a th:if="${d.available}" th:href="@{${d.url}}" th:lang="${d.lang}" th:text="${d.title}">Title</a>
+                    <span th:unless="${d.available}" th:text="${d.title}">Title</span><th:block th:if="${d.date != null}">,
+                        <span th:text="${d.date}">March 2019</span></th:block>
+                    <span class="doc-meta" th:if="${d.download and d.size != null}" th:text="${'(' + d.type + ', ' + d.size + ')'}">(PDF, 17 KB)</span>
+                    <span class="doc-meta">— archived on
+                        <time th:datetime="${d.archived}" th:text="${#temporals.format(d.archived, 'dd MMMM yyyy')}">16 October 2026</time></span>
+                </li>
+            </ul>
+        </th:block>
+    </th:block>
+</th:block>
+</body>
+</html>

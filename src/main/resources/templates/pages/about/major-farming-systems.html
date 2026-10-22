@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <h2>Farming systems identified</h2>
+        <ol>
+            <li>Agriculture + Horticulture + Animal Husbandry + Fishery</li>
+            <li>Agriculture + Horticulture + Animal Husbandry</li>
+            <li>Agriculture + Horticulture</li>
+        </ol>
+
+        <h2>Enterprises</h2>
+        <dl class="facts facts--stacked">
+            <dt>Agriculture</dt>
+            <dd>Paddy, maize, soybean</dd>
+            <dt>Horticulture</dt>
+            <dd>Tomato, ginger, turmeric, cabbage, cauliflower, chillies, beans, peas, beetroot, carrot, radish,
+                potato, garlic, lettuce, gerbera, lilium, Khasi mandarin, plum, pear, peach, papaya, banana,
+                passion fruit</dd>
+            <dt>Animal husbandry and veterinary</dt>
+            <dd>Poultry, piggery, cattle, goatery, sheep</dd>
+            <dt>Fishery</dt>
+            <dd>Common carp, grass carp, silver carp, catla, rohu</dd>
+        </dl>
+    </div>
+</th:block>
+</body>
+</html>

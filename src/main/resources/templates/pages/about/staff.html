@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--/* TODO: staff list carried over from the legacy site (last updated there in 2020) — confirm with KVK before go-live.
+       The legacy "Contact No." and "Email" columns were empty for every row and have been dropped. */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Staff list">
+        <table>
+            <caption class="visually-hidden">Staff of Krishi Vigyan Kendra, East Khasi Hills</caption>
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Area of specialisation / qualification</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th scope="row">Shri L. Victor Khonglah</th><td>Senior Scientist and Head</td><td>Plant Molecular Biology and Biotechnology</td></tr>
+            <tr><th scope="row">Shri Shanmebansan Marbaniang</th><td>Subject Matter Specialist (Extension)</td><td>Extension Education</td></tr>
+            <tr><th scope="row">Smt. Afrida Lyngdoh</th><td>Subject Matter Specialist (Agronomy)</td><td>Agronomy</td></tr>
+            <tr><th scope="row">Ms. Bakordalin Chyne</th><td>Subject Matter Specialist (Plant Protection)</td><td>Plant Protection</td></tr>
+            <tr><th scope="row">Smt. Aibanrihunlang Lyngdoh</th><td>Subject Matter Specialist (Horticulture)</td><td>Horticulture</td></tr>
+            <tr><th scope="row">Shri Samborlang Malngiang</th><td>Subject Matter Specialist (Fishery)</td><td>Fishery</td></tr>
+            <tr><th scope="row">Smt. Eldanolyne Shadap</th><td>Subject Matter Specialist (Home Science)</td><td>Foods and Nutrition</td></tr>
+            <tr><th scope="row">Shri Baiaishahlang Syiemlieh</th><td>Farm Manager</td><td>B.Sc. (Agriculture)</td></tr>
+            <tr><th scope="row">Shri Koles Andrias Muktieh</th><td>Programme Assistant (Computer)</td><td>Computer Application</td></tr>
+            <tr><th scope="row">Smt. Ladeiphi Kharsati</th><td>Programme Assistant</td><td>Extension Education</td></tr>
+            <tr><th scope="row">Smt. Wandabianglin Wanwar</th><td>Office Superintendent-cum-Accountant / Office Assistant</td><td>MBA</td></tr>
+            <tr><th scope="row">Smt. Mebarika Paswet</th><td>Assistant / Junior Stenographer</td><td>B.A.</td></tr>
+            <tr><th scope="row">Shri Elban Warjri</th><td>Driver</td><td>B.A.</td></tr>
+            <tr><th scope="row">Shri Friday Ramde</th><td>Driver</td><td>Class VIII</td></tr>
+            <tr><th scope="row">Shri Fredy Nongneng</th><td>Supporting Staff</td><td>Class XII</td></tr>
+            <tr><th scope="row">Ms. Marbakordor Myrthong</th><td>Supporting Staff</td><td>B.A.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</body>
+</html>

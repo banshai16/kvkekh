@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <ul class="story-list">
+        <li class="story-card">
+            <img th:src="@{/assets/img/story/cauliflower.jpg}" alt="" width="640" height="480" loading="lazy">
+            <div>
+                <h2><a th:href="@{/stories/cauliflower}">Cauliflower seed production</a></h2>
+                <p>Cauliflower is one of the major vegetables grown intensively by farmers in Mylliem C&amp;RD Block.
+                    Seed production of the local varieties had been declining because of low temperatures during the
+                    vegetative stage, and farmers found it hard to procure seed. With KVK support, a self-help group in
+                    Sadew village began producing its own seed in a low-cost polyhouse.</p>
+            </div>
+        </li>
+        <li class="story-card">
+            <img th:src="@{/assets/img/story/maize1.jpg}" alt="" width="640" height="480" loading="lazy">
+            <div>
+                <h2><a th:href="@{/stories/maize-cultivation}">Quality protein maize cultivation</a></h2>
+                <p>Maize is the second most important cereal in Meghalaya, with an average yield of 1.5 tonnes per
+                    hectare in 2010-11. In Dangar, a village on the Indo-Bangladesh border in Mawsynram C&amp;RD Block,
+                    the local variety gave yields well below the national average and poor-quality protein. The KVK
+                    introduced hybrid quality protein maize through on-farm trials.</p>
+            </div>
+        </li>
+        <li class="story-card">
+            <img th:src="@{/assets/img/story/maizefrench.jpg}" alt="" width="640" height="480" loading="lazy">
+            <div>
+                <h2><a th:href="@{/stories/maize-cropping}">Maize and French bean intercropping</a></h2>
+                <p>Intercropping maize with legumes such as soybean is a traditional practice in the district, but
+                    intercropping French bean in maize had not been popularised, and yields were low. The KVK worked
+                    with Smti. Shopsimai, a progressive farmer in Laitjem village, to introduce French bean
+                    intercropping with a proper package of practices.</p>
+            </div>
+        </li>
+        <li class="story-card">
+            <img th:src="@{/media/thumb/images/success_stories/Opening1.jpg}" alt="" width="640" height="480" loading="lazy">
+            <div>
+                <h2><a th:href="@{/stories/kisan-mela}">Kisan Mela cum training programme, January 2014</a></h2>
+                <p>A three-day kisan mela on integrated livelihood opportunities for small and marginal farmers,
+                    attended by 1,700 farmers from the eight blocks of East Khasi Hills.</p>
+            </div>
+        </li>
+    </ul>
+
+    <th:block th:with="collection=${docs['success-stories']}">
+        <h2 th:text="${collection.title}">Publications</h2>
+        <th:block th:replace="~{fragments/documents :: list(${collection.current})}"></th:block>
+    </th:block>
+</th:block>
+</body>
+</html>

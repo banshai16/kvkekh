@@ -1,0 +1,115 @@
+# Site identity, DBIM 3.0 Header 2 / Lockup 3A configuration, footer and global navigation.
+site:
+  # --- Lockup 3A: State Emblem + organisation logo + organisation name -------------------------
+  name: "Krishi Vigyan Kendra, East Khasi Hills"
+  name-lines:
+    - "Krishi Vigyan Kendra"
+    - "East Khasi Hills"
+  # Header 2 shows the parent department in the strip above the lockup (DBIM Figure 30).
+  parent: "Department of Agriculture and Farmers' Welfare, Government of Meghalaya"
+  emblem:
+    # TODO: replace with the State Emblem file obtained from an authorised source (DBIM 5.1).
+    # Use the black variant on white backgrounds and the white variant on dark ones (DBIM 5.3).
+    src: /assets/img/Emblem_of_Meghalaya.svg
+    alt: "Emblem of Meghalaya"
+  logo:
+    src: /assets/img/directorate-agriculture-logo.png
+    alt: "Logo of the Directorate of Agriculture, Meghalaya"
+  # Co-branding section: maximum of two logos (DBIM 5.4).
+  co-brands:
+    - src: /assets/img/icar-logo.jpg
+      alt: "Indian Council of Agricultural Research"
+      href: https://icar.org.in/
+
+  # --- Footer --------------------------------------------------------------------------------
+  # Lineage statement (DBIM 5.6) adapted for a state-government organisation.
+  lineage: >-
+    This is the official website of Krishi Vigyan Kendra, East Khasi Hills, under the
+    Department of Agriculture and Farmers' Welfare, Government of Meghalaya.
+  content-owner: "Content owned and maintained by Krishi Vigyan Kendra, East Khasi Hills."
+  hosted-by: "Designed, developed and hosted by National Informatics Centre, Meghalaya State Centre."
+  last-updated: 2026-10-16
+  footer-logos:
+    - src: /assets/img/india-gov-logo.png
+      alt: "National Portal of India"
+      href: https://www.india.gov.in/
+    - src: /assets/img/meghalaya-portal.jpg
+      alt: "Meghalaya State Portal"
+      href: https://meghalaya.gov.in/
+
+  contact:
+    address-lines:
+      - "Krishi Vigyan Kendra"
+      - "East Khasi Hills District"
+      - "Fifth Mile, Upper Shillong – 793009, Meghalaya"
+    phone: "0364-2560132"
+    emails:
+      - "kvkekhup[at]gmail[dot]com"
+      - "kvkekhup[at]yahoo[dot]co[dot]in"
+
+  related-links:
+    # Carried over from the legacy site; verify each URL is still live before go-live.
+    - label: "Meghalaya Agriculture Portal"
+      href: https://megagriculture.gov.in/
+    - label: "ICAR Zone III Portal"
+      href: https://www.icarzcu3.gov.in/
+    - label: "Indian Council of Agricultural Research"
+      href: https://icar.org.in/
+    - label: "Meghalaya Marketing Portal"
+      href: https://www.megamb.gov.in/
+    - label: "Meghalaya Portal"
+      href: https://meghalaya.gov.in/
+    - label: "KVK Ribhoi"
+      href: https://kvkribhoi.nic.in/
+    - label: "KVK West Khasi Hills"
+      href: https://kvkwestkhasihills.nic.in/
+    - label: "KVK West Garo Hills"
+      href: https://kvkwestgarohills.nic.in/
+
+  # --- Global navigation (DBIM 7.1.2: up to three levels) ---------------------------------------
+  # Each entry points at a page id from pages.yml; "label" overrides the page title in the menu.
+  navigation:
+    - page: home
+    - label: "Department"
+      children:
+        - page: about-kvk
+        - page: objectives
+        - page: mandate
+        - page: host-organisation
+        - page: staff
+        - page: district-profile
+        - page: major-farming-systems
+        - page: priority-thrust-areas
+    - label: "Offerings"
+      children:
+        - page: training
+        - page: on-farm-trials
+        - page: frontline-demonstrations
+        - page: extension-activities
+    - label: "Documents"
+      children:
+        - page: publications
+        - page: newsletters
+        - page: sale
+        - page: archive
+        - page: success-stories
+        - page: story-cauliflower
+        - page: story-maize-cropping
+        - page: story-maize-cultivation
+        - page: story-kisan-mela
+    - page: gallery
+    - label: "Connect"
+      children:
+        - page: contact-us
+        - page: feedback
+        - page: related-links
+
+  # Footer "Useful links" (DBIM 5.6 mandatory elements).
+  footer-links:
+    - page: website-policies
+    - page: archive
+    - page: sitemap
+    - page: help
+    - page: contact-us
+    - page: related-links
+    - page: feedback

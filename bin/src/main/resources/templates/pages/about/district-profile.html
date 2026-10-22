@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/map123.jpg}" width="1280" height="902"
+                 alt="Location map: Meghalaya within India, East Khasi Hills within Meghalaya, and the blocks of East Khasi Hills — Mawphlang, Mylliem, Mawryngkneng, Laitkroh-Khatarshnong, Mawkynrew, Mawsynram, Shella-Bholaganj and Pynursla">
+            <figcaption>East Khasi Hills district, Meghalaya, and its blocks.</figcaption>
+        </figure>
+
+        <p>East Khasi Hills is an administrative district in the state of Meghalaya, with its headquarters at
+            Shillong. The district occupies an area of 2,752 km² and has a population of 8,24,059 (Census 2011),
+            making it the most populous district of Meghalaya.</p>
+        <p>The climate of the district ranges from temperate in the plateau region to warmer tropical and
+            sub-tropical pockets in the northern and southern regions. The whole district is influenced by the
+            south-west monsoon, which generally begins in May and continues until September. The weather is humid
+            for most of the year, except for a relatively dry spell usually between December and March.</p>
+
+        <h2>How to reach the KVK</h2>
+        <dl class="facts">
+            <dt>Location</dt><dd>Fifth Mile, Upper Shillong</dd>
+            <dt>Landmark</dt><dd>State Biological Control Laboratory</dd>
+            <dt>Distance from head department</dt><dd>10 km</dd>
+            <dt>Distance from main city</dt><dd>10 km</dd>
+        </dl>
+    </div>
+</th:block>
+</body>
+</html>

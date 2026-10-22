@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>This policy sets out how content is contributed, checked and approved before it is published on the website
+            of Krishi Vigyan Kendra, East Khasi Hills.</p>
+        <h2>Contribution</h2>
+        <p>Content may be contributed by the Senior Scientist and Head, the Subject Matter Specialists and other KVK
+            staff for their areas of work. Contributions are sent to the Web Content Manager in an accessible format
+            (text, or accessible PDF for documents) with captions and descriptions for any photographs.</p>
+        <h2>Moderation</h2>
+        <p>The Web Content Manager checks each contribution for accuracy, spelling, accessibility (headings, link
+            text, alternative text for images) and compliance with the Guidelines for Indian Government Websites and the
+            Digital Brand Identity Manual, and prepares it for publication.</p>
+        <h2>Approval</h2>
+        <p>Content is published only after approval by the Senior Scientist and Head of the KVK, or an officer
+            designated by them. Content relating to the Department of Agriculture and Farmers' Welfare is approved by
+            the Department before publication.</p>
+        <h2>Contact</h2>
+        <p>The Web Information Manager and Web Content Manager are listed on the <a th:href="@{/contact-us}">Contact
+            Us</a> page.</p>
+    </div>
+</th:block>
+</body>
+</html>

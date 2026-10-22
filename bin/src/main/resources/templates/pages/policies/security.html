@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>This website is designed and operated to protect its content and the information of its visitors.</p>
+        <ul>
+            <li>The website is served only over an encrypted connection (HTTPS).</li>
+            <li>The website has no user accounts or logins. The only information it collects is what visitors choose to
+                send through the <a th:href="@{/feedback}">feedback form</a>, which is protected against automated
+                misuse and kept as described in the <a th:href="@{/policies/privacy}">privacy policy</a>.</li>
+            <li>The website software is kept up to date and checked regularly for known vulnerabilities.</li>
+            <li>The website is audited by a CERT-In empanelled auditor before launch and after major changes, and
+                any issues found are fixed before the website is used.</li>
+            <li>Unauthorised attempts to upload or change information, or to otherwise cause damage, are strictly
+                prohibited and may be punishable under the Information Technology Act, 2000.</li>
+        </ul>
+        <p>To report a security problem with this website, please <a th:href="@{/contact-us}">contact us</a>.</p>
+    </div>
+</th:block>
+</body>
+</html>

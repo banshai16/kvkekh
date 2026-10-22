@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Besides training, on-farm trials and frontline demonstrations, the KVK carries out the following extension
+            activities.</p>
+        <ul class="columns">
+            <li>Field days</li>
+            <li>Kisan melas</li>
+            <li>Kisan goshthis</li>
+            <li>Exhibitions</li>
+            <li>Film shows</li>
+            <li>Method demonstrations</li>
+            <li>Farmers' seminars</li>
+            <li>Workshops</li>
+            <li>Group meetings</li>
+            <li>Lectures delivered as resource persons</li>
+            <li>Newspaper coverage</li>
+            <li>Radio talks</li>
+            <li>TV talks</li>
+            <li>Popular articles</li>
+            <li>Extension literature</li>
+            <li>Advisory services</li>
+            <li>Scientists' visits to farmers' fields</li>
+            <li>Farmers' visits to the KVK</li>
+            <li>Diagnostic visits</li>
+            <li>Exposure visits</li>
+            <li>Ex-trainees' sammelan</li>
+            <li>Soil health camps</li>
+            <li>Animal health camps</li>
+            <li>Agri mobile clinic</li>
+            <li>Soil test campaigns</li>
+            <li>Farm Science Club conveners' meets</li>
+            <li>Self-help group conveners' meetings</li>
+            <li>Mahila mandal conveners' meetings</li>
+            <li>Celebration of World Food Day</li>
+            <li>Celebration of World Environment Day</li>
+        </ul>
+        <p>See the <a th:href="@{/gallery}">photo gallery</a> for pictures of these activities.</p>
+    </div>
+</th:block>
+</body>
+</html>

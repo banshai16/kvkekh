@@ -1,0 +1,13 @@
+{
+  "name": "kvk-site-audit",
+  "private": true,
+  "description": "Accessibility and keyboard audit for the KVK sites (see README.md). Drives the installed Microsoft Edge.",
+  "scripts": {
+    "axe": "node axe-scan.js http://localhost:8080/kvkekh > axe-report.json && node summarize.js",
+    "keyboard": "node keyboard.js http://localhost:8080/kvkekh"
+  },
+  "dependencies": {
+    "axe-core": "4.13.0",
+    "playwright-core": "1.63.0"
+  }
+}

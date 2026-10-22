@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--/* TODO: prices carried over from the legacy site (last updated 2020) — confirm with KVK before go-live. */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">The following planting material and produce are available for sale at the KVK, Fifth Mile,
+        Upper Shillong. Please <a th:href="@{/contact-us}">contact the KVK</a> to check availability.</p>
+
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Items for sale">
+        <table class="sale-table">
+            <thead>
+            <tr><th scope="col">Item</th><th scope="col">Photo</th><th scope="col">Price (₹)</th><th scope="col">Unit</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Brinjal seedlings</th>
+                <td><img th:src="@{/media/thumb/images/sale/brinjal_seedlings.jpg}" alt="Brinjal seedlings in a nursery" width="160" height="120" loading="lazy"></td>
+                <td class="num">1</td><td>per seedling</td>
+            </tr>
+            <tr>
+                <th scope="row">Broccoli seedlings</th>
+                <td><img th:src="@{/media/thumb/images/sale/broccoli_seedlings.jpg}" alt="Broccoli seedlings in a seedling tray" width="160" height="120" loading="lazy"></td>
+                <td class="num">1</td><td>per seedling</td>
+            </tr>
+            <tr>
+                <th scope="row">Cabbage seedlings</th>
+                <td><img th:src="@{/media/thumb/images/sale/cabbage_seedlings.jpg}" alt="Young cabbage plant" width="160" height="120" loading="lazy"></td>
+                <td class="num">1</td><td>per seedling</td>
+            </tr>
+            <tr>
+                <th scope="row">Chilli seedlings</th>
+                <td><img th:src="@{/media/thumb/images/sale/chilli_seedlings.jpg}" alt="Chilli seedlings in a seedling tray" width="160" height="120" loading="lazy"></td>
+                <td class="num">1</td><td>per seedling</td>
+            </tr>
+            <tr>
+                <th scope="row">Gerbera cut flowers</th>
+                <td><img th:src="@{/media/thumb/images/sale/gerbera_cutflowers.jpg}" alt="Gerbera plants flowering in a polyhouse" width="160" height="120" loading="lazy"></td>
+                <td class="num">5</td><td>per flower</td>
+            </tr>
+            <tr>
+                <th scope="row">Gerbera seedlings</th>
+                <td><img th:src="@{/media/thumb/images/sale/gerbera_seedlings.JPG}" alt="Gerbera seedlings planted along a drip line" width="160" height="120" loading="lazy"></td>
+                <td class="num">3</td><td>per seedling</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</body>
+</html>

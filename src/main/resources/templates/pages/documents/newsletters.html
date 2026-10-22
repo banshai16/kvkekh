@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">Half-yearly newsletters of KVK East Khasi Hills, newest first. Some issues are large files; on
+        a slow connection, download them before opening.</p>
+    <th:block th:replace="~{fragments/documents :: list(${docs['newsletters'].current})}"></th:block>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--/* Keep in step with the code: feedback.retention (application.yml), session timeout, VisitorCounter. */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Thank you for visiting the website of Krishi Vigyan Kendra, East Khasi Hills, and for reviewing our privacy
+            policy.</p>
+
+        <h2>Information we collect</h2>
+        <p>This website does not collect personal information such as your name or address when you visit it, and it
+            does not create individual profiles for commercial marketing.</p>
+        <p>Like all web servers, our server records technical information about each request — the date and time,
+            the page requested, your IP address and your browser type — for security and to diagnose problems. This
+            information is not used to identify individual visitors, except where required by law (for example, to
+            investigate an attack on the website).</p>
+
+        <h2>Visitor counter</h2>
+        <p>The visitor count shown at the foot of each page counts each visitor once per day. We do not store your IP
+            address for this: it is combined with the date and a secret key into a code that cannot be traced back to
+            you, and these codes are deleted every night.</p>
+
+        <h2>Information you choose to give us</h2>
+        <p>If you send us feedback through the <a th:href="@{/feedback}">feedback form</a>, we collect your name,
+            location, email address and message. We use them only to respond to your message and to provide the
+            information you have requested. Your message is emailed to the KVK and a copy is kept on our server for one
+            year, after which it is deleted automatically. We share it with another Government agency only if your
+            question relates to that agency, or as otherwise required by law. Please do not include personal
+            information that is not needed for your query.</p>
+
+        <h2>Cookies and preferences</h2>
+        <p>This website does not use cookies for tracking or analytics. The feedback form uses one essential session
+            cookie, which protects the form against misuse; it is deleted when you close your browser or after 30
+            minutes of inactivity. No other page sets a cookie.</p>
+        <p>When you first visit, a banner at the bottom of the page asks whether you accept, reject or want to
+            customise optional cookies. Nothing optional is switched on unless you choose it. This website does not
+            currently use any optional cookies. Your choice is stored only in your own browser, and you can change it at
+            any time with <strong>Cookie preferences</strong> in the page footer.</p>
+        <p>If you change the <a th:href="@{/help}">accessibility controls</a> (such as text size or contrast), your
+            choices are stored only in your own browser, so they apply on your next visit; they are never sent to us. You
+            can clear them at any time with <strong>Reset all</strong> in the accessibility controls, or by clearing your
+            browser's site data.</p>
+
+        <h2>Security</h2>
+        <p>The website is served over an encrypted connection (HTTPS), and data is stored on Government servers in
+            India.</p>
+
+        <h2>Contact</h2>
+        <p>For any questions about this policy, please <a th:href="@{/contact-us}">contact us</a>.</p>
+    </div>
+</th:block>
+</body>
+</html>

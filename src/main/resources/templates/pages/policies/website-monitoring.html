@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>The website is monitored to make sure it remains available, performs well, and stays compatible and
+            accessible for all users. Monitoring covers:</p>
+        <ul>
+            <li><strong>Availability and performance:</strong> the hosting team at the National Informatics Centre
+                monitors the server and is alerted if the website stops responding.</li>
+            <li><strong>Functional defects and broken links:</strong> pages and links are checked during each content
+                review; visitors can report problems through the <a th:href="@{/feedback}">feedback form</a>.</li>
+            <li><strong>Accessibility and compatibility:</strong> the website is tested against the Guidelines for
+                Indian Government Websites (GIGW 3.0) and WCAG 2.1 level AA before each significant change, and on
+                current versions of common browsers and mobile devices.</li>
+            <li><strong>Security:</strong> software is kept up to date, and the website is audited by a CERT-In
+                empanelled auditor before launch and after major changes.</li>
+            <li><strong>Feedback:</strong> feedback from visitors is reviewed and used to improve the website.</li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

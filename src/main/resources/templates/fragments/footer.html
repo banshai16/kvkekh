@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--/*
+  DBIM 3.0 footer (section 5.6): website policies, sitemap, related links, help, feedback, contact us,
+  last updated on, lineage — on the key (darkest) colour of the selected colour group.
+*/-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="footer" class="site-footer">
+    <div class="container footer__grid">
+        <nav class="footer__links" aria-labelledby="footer-links-title">
+            <h2 id="footer-links-title">Useful Links</h2>
+            <ul>
+                <li th:each="link : ${footerLinks}"><a th:href="@{${link.path}}" th:text="${link.label}">Sitemap</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer__contact">
+            <h2>Contact</h2>
+            <address>
+                <th:block th:each="line : ${site.contact.addressLines}"><span th:text="${line}">Address</span><br></th:block>
+                Phone: <a th:href="${'tel:' + site.contact.phone}" th:text="${site.contact.phone}">0364-2560132</a><br>
+                Email: <th:block th:each="email, st : ${site.contact.emails}"><span th:text="${email}">email</span><br th:unless="${st.last}"></th:block>
+            </address>
+        </div>
+
+        <div class="footer__aside">
+            <h2>Government Portals</h2>
+            <div class="footer__logos">
+                <a th:each="logo : ${site.footerLogos}" th:href="${logo.href}" rel="noopener">
+                    <img th:src="@{${logo.src}}" th:alt="${logo.alt + ' (external website)'}" height="36">
+                </a>
+            </div>
+            <p class="footer__updated">
+                Last Updated On:
+                <time th:with="updated=${page != null and page.lastUpdated != null} ? ${page.lastUpdated} : ${site.lastUpdated}"
+                      th:datetime="${updated}" th:text="${#temporals.format(updated, 'dd MMMM yyyy')}">16 October 2026</time>
+            </p>
+            <p class="footer__updated">Visitors: <span th:text="${visitorCount}">10,569</span></p>
+        </div>
+    </div>
+
+    <div class="container footer__bottom">
+        <p th:text="${site.lineage}">This is the official website of …</p>
+        <p th:text="${site.contentOwner}">Content owned and maintained by …</p>
+        <p class="footer__nic">
+            <img th:src="@{/assets/img/nic-logo.png}" alt="National Informatics Centre" height="32">
+            <span th:text="${site.hostedBy}">Designed, developed and hosted by NIC</span>
+        </p>
+        <p class="footer__cookies">
+            <button type="button" class="footer__link-button" data-cookie-open>Cookie preferences</button>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

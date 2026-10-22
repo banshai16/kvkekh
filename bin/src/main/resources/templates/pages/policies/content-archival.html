@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Content on this website is reviewed regularly. Content that is no longer current is moved to the
+            <a th:href="@{/documents/archive}">archive</a> rather than deleted, so that it remains available for
+            reference. Each archived item shows the date it was archived.</p>
+        <h2>When content is archived</h2>
+        <ul>
+            <li>Notices, advertisements and recruitment results: once the notice period, application date or event has
+                passed.</li>
+            <li>Event announcements: after the event, unless they are kept as a success story or in the photo gallery.</li>
+            <li>Other documents: when they are replaced by a newer version, or are no longer relevant.</li>
+        </ul>
+        <h2>How long archived content is kept</h2>
+        <p>Archived content remains available on the website for at least three years after it is archived, after
+            which it may be removed with the approval of the Senior Scientist and Head. Annual reports, newsletters and
+            extension publications are kept permanently.</p>
+    </div>
+</th:block>
+</body>
+</html>

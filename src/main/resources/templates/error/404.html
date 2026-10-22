@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>The page you are looking for may have been moved or no longer exists.</p>
+        <ul>
+            <li>Go to the <a th:href="@{/}">home page</a></li>
+            <li>Browse the <a th:href="@{/sitemap}">sitemap</a></li>
+            <li>Search this website using the search box above</li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

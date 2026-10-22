@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">On-farm trials (OFT) test technologies on farmers' own fields to identify what works under local
+        conditions. <a href="#what-is-oft">What is on-farm testing?</a></p>
+
+    <h2>On-farm trials on crops</h2>
+    <div class="table-scroll" role="region" tabindex="0" aria-label="On-farm trials on crops">
+        <table>
+            <thead>
+            <tr><th scope="col">Crop</th><th scope="col">Farming situation</th><th scope="col">Problem diagnosed</th><th scope="col">Title of OFT</th></tr>
+            </thead>
+            <tbody>
+            <tr><th scope="row">Broccoli</th><td>Rainfed</td><td>Low cropping intensity</td><td>Exotic vegetable production</td></tr>
+            <tr><th scope="row">King chilli</th><td>Rainfed</td><td>Lack of knowledge of cultivation of a low volume, high value crop</td><td>Production of a low volume, high value crop</td></tr>
+            <tr><th scope="row">Gerbera</th><td>Rainfed</td><td>Low income generation</td><td>Production of potential ornamentals</td></tr>
+            <tr><th scope="row">Tomato</th><td>Rainfed</td><td>Fruit borer</td><td>Use of Trichocards (<i>Trichogramma chilonis</i>) for controlling tomato fruit borer</td></tr>
+            <tr><th scope="row">Pea</th><td>Rainfed</td><td>Rhizoctonia rot</td><td>Use of bio-pesticide for controlling Rhizoctonia rot</td></tr>
+            <tr><th scope="row">Rice</th><td>Rainfed</td><td>Lack of knowledge of the scientific method of cultivation</td><td>Evaluation of three upland rice cultivars (SARS series) and one lowland cultivar</td></tr>
+            <tr><th scope="row">Rice</th><td>Rainfed</td><td>Unavailability of labour, higher cost of land preparation (tillage) and soil degradation</td><td>Resource conservation technologies in rice-based cropping systems</td></tr>
+            <tr><th scope="row">Lentil / pea</th><td>Rainfed</td><td>Low crop intensity, with fields left fallow after rice</td><td>Zero tillage of lentil / pea</td></tr>
+            <tr><th scope="row">Groundnut</th><td>Rainfed</td><td>Lack of knowledge of the scientific method of cultivation</td><td>Groundnut ICGS-76</td></tr>
+            <tr><th scope="row">Maize</th><td>Rainfed</td><td>Low yield of local maize varieties; poor nutritional status of farm children</td><td>Performance of the HQPM 1 variety in both kharif and rabi seasons in the district</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>On-farm trials on extension</h2>
+    <div class="table-scroll" role="region" tabindex="0" aria-label="On-farm trials on extension">
+        <table>
+            <thead>
+            <tr><th scope="col">Sl. No.</th><th scope="col">Thematic area</th><th scope="col">Details of technology</th><th scope="col">Source and year</th></tr>
+            </thead>
+            <tbody>
+            <tr><td class="num">1</td><td>Benchmark survey (PRA etc.)</td><td>Assessment and identification of problems in marketing agricultural products through the PRA technique</td><td>ZPD, ICAR, Zone III, 2009</td></tr>
+            <tr><td class="num">2</td><td>Impact assessment</td><td>Evaluation of the technological gap in villages where FLDs on popularisation of ginger var. Nadia were conducted during 2011-12</td><td>ZPD, ICAR, Zone III, 2009</td></tr>
+            <tr><td class="num">3</td><td>Technology backstopping</td><td>Technology backstopping on production of low volume, high value crops</td><td>ZPD, ICAR, Zone III, 2009</td></tr>
+            <tr><td class="num">4</td><td>Dissemination time / loss of technologies</td><td>Assessment of various group extension methods of technology dissemination</td><td>ZPD, ICAR, Zone III, 2009</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="prose">
+        <h2 id="what-is-oft">What is on-farm testing?</h2>
+        <p>On-farm testing (OFT) is not researcher-managed small plots on farms. Nor is it a single-strip,
+            split-field or field-to-field comparison of something new with current farming practice. On-farm testing,
+            as defined here, is replicated, scientifically valid research with field trials established and managed by
+            the growers with field-scale equipment. Properly designed, grower on-farm tests can separate the effects of
+            natural field variability from the effects of the treatments being compared, and can provide an accurate
+            basis for grower management decisions.</p>
+
+        <h3>Why do growers need "scientific" field trials?</h3>
+        <p>The need for scientific experimental designs in grower field trials may not be readily apparent. Growers
+            are usually very adept at observing how a new practice or management option performs and at making
+            decisions based on their farming experience.</p>
+        <p>Growers have been exploring new farming methods for thousands of years, but only recently has a
+            substantial effort been made to bring the principles of modern scientific methods to their aid. Growers
+            have often evaluated a new practice by applying it to a small field and comparing the results with nearby
+            fields, or by splitting a field and applying the new practice on one side and their normal practice on the
+            other. Likewise, growers and industry representatives sometimes place a strip of a new herbicide,
+            fertiliser or other production option in a field to compare it with the rest of the field. These are
+            called "demonstrations", and they allow a local comparison of how a practice "looks". This can be an
+            important first step. The problem comes when you want more than a "look": it is simply not possible to
+            make reliable comparisons of yields and other quantitative data without a scientific approach.</p>
+        <p>Growers have expressed concern about adopting equipment and technologies that have not been tested in
+            their agro-climatic conditions and cropping systems. Cropland contains highly variable soils, topography,
+            climatic conditions and cropping systems, making testing and transfer of new farming technologies
+            especially difficult. In this variable cropland, and even in "uniform" areas, the design of OFTs is a
+            critical first step in accurate field comparison of management options.</p>
+    </div>
+</th:block>
+</body>
+</html>

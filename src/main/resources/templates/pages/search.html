@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <form class="site-search" role="search" aria-label="Search again" th:action="@{/search}" method="get">
+        <label for="search-page-q" class="visually-hidden">Search this website</label>
+        <input id="search-page-q" name="q" type="search" maxlength="100" th:value="${query}">
+        <button type="submit"><svg th:replace="~{fragments/icons :: search}"></svg><span class="visually-hidden">Search</span></button>
+    </form>
+    <p class="gallery-meta">Searches the text of all pages, documents (including the text inside PDF files) and
+        photo captions.</p>
+
+    <th:block th:unless="${query.isEmpty()}">
+        <p role="status">
+            <th:block th:text="${results.size() == 1} ? '1 result' : ${results.size() + ' results'}">0 results</th:block>
+            for “<strong th:text="${query}">query</strong>”.
+        </p>
+        <ul class="search-results" th:unless="${results.isEmpty()}">
+            <li th:each="r : ${results}">
+                <span class="search-kind" th:text="${r.kind}">Page</span>
+                <a th:href="@{${r.url}}" th:text="${r.title}">Objectives</a>
+                <span class="doc-meta" th:if="${r.meta != null}" th:text="${'(' + r.meta + ')'}">(PDF, 2.5 MB)</span>
+                <p th:unless="${r.snippet.isEmpty()}"><th:block th:each="f : ${r.snippet}"><mark th:if="${f.match}" th:text="${f.text}">maize</mark><th:block th:unless="${f.match}" th:text="${f.text}">text</th:block></th:block></p>
+            </li>
+        </ul>
+        <p th:if="${results.isEmpty()}">Try different or fewer words, or browse the <a th:href="@{/sitemap}">sitemap</a>.</p>
+    </th:block>
+</th:block>
+</body>
+</html>

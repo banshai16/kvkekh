@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="80" viewBox="0 0 56 80" role="img" aria-label="Placeholder for the State Emblem of India">
+  <!-- PLACEHOLDER ONLY. Replace with the State Emblem obtained from an authorised source (DBIM 3.0, section 5.1).
+       The emblem must never be redrawn, recoloured beyond black/white, or scaled disproportionately. -->
+  <rect x="0.5" y="0.5" width="55" height="79" rx="2" fill="#EBEAEA" stroke="#8E8E8E" stroke-dasharray="4 3"/>
+  <text x="28" y="36" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#606060">State</text>
+  <text x="28" y="48" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#606060">Emblem</text>
+</svg>

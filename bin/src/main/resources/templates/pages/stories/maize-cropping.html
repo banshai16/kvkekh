@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Intercropping maize with legumes, especially soybean, is traditionally practised in East Khasi Hills.
+            However, intercropping French bean in maize as an additional crop had not been popularised, and farmers'
+            intercropping practices were not scientific, so yields were low. KVK East Khasi Hills selected Smti.
+            Shopsimai, a progressive farmer in Laitjem village, to introduce French bean intercropping in maize with a
+            proper package of practices. French bean fetches a high market price all year round, adds to farm income,
+            and improves the physical and chemical condition of the soil.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/maizem.jpg}"
+                 alt="Farmers harvesting maize cobs in a field, with a KVK banner in front">
+            <figcaption>Maize harvest from the intercropped field.</figcaption>
+        </figure>
+
+        <p>In 2012 the farmer was provided with the Vijay Composite variety of maize and the Selection 9 variety of
+            French bean. Trainings were conducted and standard practices were demonstrated in the field: maize was sown
+            in lines with regular row-to-row and plant-to-plant spacing, in a 1:1 ratio of maize to French bean. The
+            importance of nutrient management was emphasised and recommended practices were encouraged.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/french.jpg}"
+                 alt="A heap of freshly harvested green French beans">
+            <figcaption>French beans harvested from the same field.</figcaption>
+        </figure>
+
+        <h2>Results</h2>
+        <div class="table-scroll" role="region" tabindex="0" aria-label="Yield and returns">
+            <table>
+                <thead>
+                <tr><th scope="col">Crop</th><th scope="col">Yield (t/ha)</th><th scope="col">Price (₹/kg)</th><th scope="col">Gross return (₹)</th></tr>
+                </thead>
+                <tbody>
+                <tr><th scope="row">Maize</th><td class="num">3.2</td><td class="num">12</td><td class="num">43,532.00</td></tr>
+                <tr><th scope="row">French bean</th><td class="num">6.7</td><td class="num">20</td><td class="num">1,33,960.00</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <dl class="facts">
+            <dt>Total cost of cultivation</dt><dd>₹58,948.72</dd>
+            <dt>Net return</dt><dd>₹1,13,543.28</dd>
+            <dt>Benefit-cost ratio</dt><dd class="num">3.01</dd>
+        </dl>
+        <p>Harvesting two crops from the same area at different times of the year consolidated the farmer's income,
+            with French bean providing a good additional income alongside the main crop. This motivated her to continue
+            the practice in the following years, and other farmers in the vicinity are willing to follow it.</p>
+    </div>
+</th:block>
+</body>
+</html>

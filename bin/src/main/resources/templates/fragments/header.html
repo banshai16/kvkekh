@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--/*
+  DBIM 3.0 Header 2 (section 5.4.2, Figure 30) with Logo Lockup 3A (section 5.2.3):
+    strip  : parent department + user controls (skip to main content, language, accessibility)
+    brand  : State Emblem + organisation logo + organisation name | search | co-branding (max 2)
+    nav    : global navigation menu (up to 3 levels)
+*/-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header" class="site-header">
+
+    <div class="gov-strip">
+        <div class="container gov-strip__inner">
+            <p class="gov-strip__parent" th:text="${site.parent}">Department of Agriculture and Farmers' Welfare, Government of Meghalaya</p>
+
+            <ul class="user-controls" aria-label="User controls">
+                <li>
+                    <a class="uc-btn" href="#main">
+                        <svg th:replace="~{fragments/icons :: skip}"></svg>
+                        <span class="uc-label">Skip to main content</span>
+                    </a>
+                </li>
+                <li>
+                    <button type="button" class="uc-btn" data-disclosure aria-expanded="false" aria-controls="language-menu">
+                        <svg th:replace="~{fragments/icons :: language}"></svg>
+                        <span class="uc-label">Language</span>
+                    </button>
+                    <ul id="language-menu" class="dropdown" aria-label="Select language" hidden>
+                        <li><span lang="en" aria-current="true">English</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button" class="uc-btn" data-disclosure data-focus-target aria-expanded="false" aria-controls="a11y-panel">
+                        <svg th:replace="~{fragments/icons :: accessibility}"></svg>
+                        <span class="uc-label">Accessibility</span>
+                    </button>
+                    <th:block th:replace="~{fragments/header :: a11yPanel}"></th:block>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="brand-bar">
+        <div class="container brand-bar__inner">
+            <a class="lockup" th:href="@{/}">
+                <img class="lockup__emblem" th:src="@{${site.emblem.src}}" th:alt="${site.emblem.alt}" width="56" height="80">
+                <img class="lockup__logo" th:src="@{${site.logo.src}}" th:alt="${site.logo.alt}" width="64" height="64">
+                <span class="lockup__name">
+                    <span th:each="line : ${site.nameLines}" th:text="${line}">Krishi Vigyan Kendra</span>
+                </span>
+                <span class="visually-hidden">(home page)</span>
+            </a>
+
+            <form class="site-search" role="search" aria-label="Search this website" th:action="@{/search}" method="get">
+                <label for="site-search-q" class="visually-hidden">Search this website</label>
+                <input id="site-search-q" name="q" type="search" placeholder="Search…" maxlength="100"
+                       autocomplete="off" th:value="${query}">
+                <button type="submit">
+                    <svg th:replace="~{fragments/icons :: search}"></svg>
+                    <span class="visually-hidden">Search</span>
+                </button>
+            </form>
+
+            <div class="co-brands" th:unless="${site.coBrands.isEmpty()}">
+                <a th:each="brand : ${site.coBrands}" th:href="${brand.href}" rel="noopener">
+                    <img th:src="@{${brand.src}}" th:alt="${brand.alt + ' (external website)'}" width="64" height="64">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="global-nav" aria-label="Main">
+        <div class="container">
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="global-menu">
+                <svg th:replace="~{fragments/icons :: menu}"></svg> Menu
+            </button>
+            <ul id="global-menu" class="menu">
+                <li th:each="item, it : ${menu}" th:classappend="${item.contains(currentPath)} ? 'is-active'">
+                    <a th:unless="${item.group}" th:href="@{${item.path}}" th:text="${item.label}"
+                       th:aria-current="${item.path == currentPath} ? 'page'">Home</a>
+                    <th:block th:if="${item.group}">
+                        <button type="button" class="menu__toggle" data-disclosure aria-expanded="false"
+                                th:aria-controls="${'submenu-' + it.index}" th:text="${item.label}">About</button>
+                        <ul class="submenu" th:id="${'submenu-' + it.index}" hidden>
+                            <li th:each="child : ${item.children}">
+                                <a th:href="@{${child.path}}" th:text="${child.label}"
+                                   th:aria-current="${child.path == currentPath} ? 'page'">Page</a>
+                            </li>
+                        </ul>
+                    </th:block>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!--/* Accessibility controls panel — DBIM 3.0 Figure 44 */-->
+<div th:fragment="a11yPanel" id="a11y-panel" class="a11y-panel" role="region" aria-labelledby="a11y-panel-title" hidden>
+    <div class="a11y-panel__head">
+        <h2 id="a11y-panel-title"><svg th:replace="~{fragments/icons :: accessibility}"></svg> Accessibility Controls</h2>
+        <button type="button" class="uc-btn" data-close>
+            <svg th:replace="~{fragments/icons :: close}"></svg><span class="visually-hidden">Close accessibility controls</span>
+        </button>
+    </div>
+    <ul class="a11y-panel__grid">
+        <li><button type="button" class="a11y-option" data-a11y-toggle="dark" aria-pressed="false"><svg th:replace="~{fragments/icons :: dark}"></svg>Dark contrast</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-toggle="invert" aria-pressed="false"><svg th:replace="~{fragments/icons :: invert}"></svg>Invert</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-toggle="saturation" aria-pressed="false"><svg th:replace="~{fragments/icons :: saturation}"></svg>Saturation</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-text="up"><svg th:replace="~{fragments/icons :: text-up}"></svg>Text size increase</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-text="down"><svg th:replace="~{fragments/icons :: text-down}"></svg>Text size decrease</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-toggle="links" aria-pressed="false"><svg th:replace="~{fragments/icons :: links}"></svg>Highlight links</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-toggle="hide-images" aria-pressed="false"><svg th:replace="~{fragments/icons :: hide-images}"></svg>Hide images</button></li>
+        <li><button type="button" class="a11y-option" data-a11y-toggle="cursor" aria-pressed="false"><svg th:replace="~{fragments/icons :: cursor}"></svg>Big cursor</button></li>
+    </ul>
+    <div class="a11y-panel__foot">
+        <p id="a11y-status" class="a11y-panel__status" role="status" aria-live="polite"></p>
+        <button type="button" class="btn btn--secondary" data-a11y-reset>Reset all</button>
+    </div>
+    <p class="a11y-panel__status"><a th:href="@{/help/screen-reader-access}">Screen reader access</a></p>
+</div>
+</body>
+</html>

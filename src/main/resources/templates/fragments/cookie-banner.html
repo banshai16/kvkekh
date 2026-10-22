@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--/*
+  DBIM 3.0 section 7.6.1 / checklist items 40-41: consent banner at the bottom of the page that lets the visitor
+  accept, reject or customise cookies. Hidden until site.js finds that no choice has been recorded yet.
+  Nothing is pre-ticked (7.6.4 ii). The choice is kept in this browser only (localStorage "kvk-consent").
+  Essential items (feedback-form session cookie, accessibility settings) need no consent (7.6.3.1).
+*/-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="cookie-banner" id="cookie-banner" class="cookie-banner" role="region"
+         aria-labelledby="cookie-banner-title" hidden>
+    <div class="container cookie-banner__inner">
+        <h2 id="cookie-banner-title">Cookies on this website</h2>
+        <p>We use only the cookies and browser storage this website needs to work, such as the feedback form's
+            security cookie and your accessibility settings. You can also choose whether we may use optional
+            cookies to measure how the website is used. Read our
+            <a th:href="@{/policies/privacy}">Privacy Policy</a>.</p>
+
+        <div id="cookie-settings" class="cookie-banner__settings" hidden>
+            <fieldset>
+                <legend>Choose your cookie preferences</legend>
+                <div class="cookie-option">
+                    <input type="checkbox" id="cookie-essential" checked disabled>
+                    <label for="cookie-essential">Essential <span>(always on)</span></label>
+                    <p>Keeps the feedback form secure and remembers your accessibility settings. The website cannot work
+                        properly without these.</p>
+                </div>
+                <div class="cookie-option">
+                    <input type="checkbox" id="cookie-analytics" name="analytics">
+                    <label for="cookie-analytics">Usage statistics</label>
+                    <p>Would let us count visits and see which pages are used, to improve the website. This website does
+                        not use such cookies at present; your choice is saved in case that changes.</p>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="cookie-banner__actions">
+            <button type="button" class="btn" data-cookie-accept>Accept all</button>
+            <button type="button" class="btn btn--secondary" data-cookie-reject>Reject all</button>
+            <button type="button" class="btn btn--secondary" id="cookie-customize" data-cookie-customize
+                    aria-expanded="false" aria-controls="cookie-settings">Customise</button>
+            <button type="button" class="btn" data-cookie-save hidden>Save my choices</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>

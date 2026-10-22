@@ -1,0 +1,105 @@
+spring:
+  application:
+    name: kvkekh
+  config:
+    import:
+      - classpath:content/site.yml
+      - classpath:content/pages.yml
+      - classpath:content/albums.yml
+      - classpath:content/documents.yml
+  thymeleaf:
+    cache: true
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          max-age: 7d
+  mvc:
+    problemdetails:
+      enabled: false
+  # Embedded H2 database (feedback log, visitor counter). Lives in a single file under KVK_DATA_DIR.
+  datasource:
+    url: jdbc:h2:file:${KVK_DATA_DIR:./var/data}/kvkekh
+    username: kvkekh
+    password: ${KVK_DB_PASSWORD:}
+  # Outgoing mail is configured only through the environment — never commit credentials:
+  #   SPRING_MAIL_HOST, SPRING_MAIL_PORT, SPRING_MAIL_USERNAME, SPRING_MAIL_PASSWORD
+  # Without SPRING_MAIL_HOST, feedback is still saved but no email is sent (logged as NOT_CONFIGURED).
+  mail:
+    properties:
+      # Set KVK_MAIL_AUTH=false for an IP-whitelisted relay that takes no credentials.
+      mail.smtp.auth: ${KVK_MAIL_AUTH:true}
+      mail.smtp.starttls.enable: ${KVK_MAIL_STARTTLS:true}
+      mail.smtp.connectiontimeout: 10000
+      mail.smtp.timeout: 10000
+      mail.smtp.writetimeout: 10000
+
+server:
+  servlet:
+    # Kept identical to the live site (https://kvkeastkhasihills.nic.in/kvkekh) so that
+    # legacy links and search-engine results keep resolving under the same prefix.
+    context-path: /
+    session:
+      # Sessions exist only on the feedback form (CSRF token, captcha). Never put the id in URLs.
+      timeout: 30m
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+        same-site: lax
+  error:
+    whitelabel:
+      enabled: false
+    include-stacktrace: never
+    include-message: never
+  compression:
+    enabled: true
+  # Tomcat's RemoteIpValve: trusts X-Forwarded-For/-Proto only from internal (private-range) proxies,
+  # so clients cannot spoof their IP to the rate limiter or visitor counter.
+  forward-headers-strategy: native
+
+logging:
+  level:
+    # PDFBox logs a warning for every repairable defect in older PDFs while indexing them for search.
+    org.apache.pdfbox: ERROR
+    org.apache.fontbox: ERROR
+
+site:
+  # Canonical public URL (with context path) for absolute links in sitemap.xml and robots.txt.
+  base-url: ${KVK_BASE_URL:https://kvkeastkhasihills.nic.in/kvkekh}
+
+media:
+  # Folder holding the bulky legacy media (images/, publication/, newsletter/, Actionplan/,
+  # advertisement/). Served from disk rather than packed into the jar. Override per environment.
+  root: ${KVK_MEDIA_ROOT:../kvkekh/public_html}
+  # Resized images (thumbnails, display sizes). Must be writable; can be deleted at any time.
+  cache-dir: ${KVK_CACHE_DIR:./var/image-cache}
+  warm-cache: true
+
+feedback:
+  # Where feedback is emailed (the legacy site's recipient) and the sender address the mail relay accepts.
+  recipient: ${KVK_FEEDBACK_TO:kvkekhup@yahoo.co.in}
+  sender: ${KVK_MAIL_FROM:}
+  # Submissions per IP address per hour, and how long submissions are kept in the database.
+  max-per-hour: 5
+  retention: 365d
+
+visitors:
+  # Value of the legacy site's counter.txt when it was retired; new unique visitors are added to it.
+  baseline: 10569
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      cache:
+        cachecontrol:
+          max-age: 0
+
+site:
+  # Development: build absolute URLs from the request (http://localhost:8080/kvkekh).
+  base-url: ""

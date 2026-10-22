@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <figure class="photo-view">
+        <img th:src="@{${photo.mediumUrl}}" th:alt="${photo.alt(album.album.title, album.photos.size())}">
+        <figcaption th:if="${photo.caption != null}" th:text="${photo.caption}">Caption</figcaption>
+    </figure>
+
+    <nav class="photo-pager" aria-label="Photos in this album">
+        <a th:if="${previous != null}" class="btn btn--secondary" th:href="@{${album.path + '/' + previous.id}}" rel="prev">
+            ‹ Previous<span class="visually-hidden" th:text="${', photo ' + previous.number}"></span>
+        </a>
+        <a class="btn btn--secondary" th:href="@{${album.path}}">All photos in this album</a>
+        <a th:if="${next != null}" class="btn btn--secondary" th:href="@{${album.path + '/' + next.id}}" rel="next">
+            Next<span class="visually-hidden" th:text="${', photo ' + next.number}"></span> ›
+        </a>
+    </nav>
+
+    <p class="gallery-meta">
+        <a th:href="@{${photo.largeUrl}}">View high-resolution image</a> <span class="doc-meta">(JPG)</span>
+    </p>
+</th:block>
+</body>
+</html>

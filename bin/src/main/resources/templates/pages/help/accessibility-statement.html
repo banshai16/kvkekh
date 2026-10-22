@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--/* TODO: once the STQC/GIGW audit is complete, state the certification and its date here. */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>We want everyone who visits this website to be able to use it, irrespective of the device, technology or
+            ability. The website is designed to meet the Guidelines for Indian Government Websites (GIGW 3.0) and the
+            World Wide Web Consortium's Web Content Accessibility Guidelines (WCAG) 2.1 at level AA, and follows the
+            Digital Brand Identity Manual (DBIM 3.0) of the Government of India.</p>
+
+        <h2>What we have done</h2>
+        <ul>
+            <li>The website works on desktop and laptop computers, tablets and mobile phones.</li>
+            <li>Every page can be navigated with the keyboard alone, and a "Skip to main content" link is provided.</li>
+            <li>Pages are structured with headings, landmarks and lists so that screen readers can navigate them.</li>
+            <li>Images have text alternatives, and photographs in the gallery have captions.</li>
+            <li>Text and background colours meet the WCAG contrast requirements.</li>
+            <li>Accessibility controls let you change text size, contrast and colours (see <a th:href="@{/help}">Help</a>).</li>
+            <li>Links to documents state the file format and size.</li>
+        </ul>
+
+        <h2>Known limitations</h2>
+        <ul>
+            <li>The following documents are scanned images without a text layer, so screen readers cannot read them
+                and site search cannot find words inside them: the leaflets on cabbage, cauliflower and potato
+                cultivation, and on integrated disease and pest management in rice; and the newsletters for January
+                2010 to June 2012. We plan to replace them with accessible versions. Some other older PDF documents
+                are not fully tagged for screen readers.</li>
+            <li>If you need the content of any document in another format, please <a th:href="@{/contact-us}">contact
+                us</a> and we will provide it.</li>
+            <li>Websites we link to are maintained by other organisations, who are responsible for their
+                accessibility.</li>
+        </ul>
+
+        <h2>Feedback</h2>
+        <p>If you find any part of this website difficult to use, please tell us through the
+            <a th:href="@{/feedback}">feedback form</a> or by <a th:href="@{/contact-us}">contacting us</a>.</p>
+    </div>
+</th:block>
+</body>
+</html>

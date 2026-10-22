@@ -1,0 +1,332 @@
+# Photo gallery. Each album shows every JPG/PNG in its folder (media-relative), sorted by file name.
+# To add photos: copy them into the folder — they appear without a restart.
+# To add an album: add a folder under images/photogallery and an entry here.
+#
+#   slug      URL part: /gallery/<slug>      cover   file name of the cover photo (default: first)
+#   captions  per-file text, also used as the image's alternative text (GIGW/WCAG 1.1.1). Files without
+#             one get a caption from their file name when it is descriptive ("Field preparation for SRI"),
+#             otherwise "<Album>, photo N of M". Captions below describe only what is visible in the photo;
+#             KVK staff should add names, places and dates where known.
+gallery:
+  albums:
+    - slug: poshan-maah
+      title: "Poshan Maah"
+      folder: images/photogallery/POSHANMAAH
+      cover: DSC00705.JPG
+      legacy: [/content/poshanmaah.php]
+      captions:
+        - { file: "DSC00705.JPG", text: "Seed kits handed over to beneficiaries at the KVK office" }
+        - { file: "Seed distribution to Aganwadi Workers (1).jpg", text: "Seed distribution to anganwadi workers" }
+
+    - slug: swachhta-pakhwada
+      title: "Swachhta Pakhwada"
+      folder: images/photogallery/swachhtapakwada
+      cover: IMG_20201217_111849.jpg
+      legacy: [/content/swachhtapakwada.php]
+      captions:
+        - { file: "IMG_20201217_111849.jpg", text: "KVK staff with the Swachhta Pakhwada banner outside the KVK office" }
+        - { file: "Swachta pakhwada.jpg", text: "Swachhta Pakhwada pledge taken by KVK staff" }
+        - { file: "swachta pakhwada1.jpg", text: "Participants with the Swachhta Pakhwada banner in a field" }
+
+    - slug: pkvy
+      title: "Paramparagat Krishi Vikas Yojana (PKVY)"
+      folder: images/photogallery/PKVY
+      cover: 20200814_124858.jpg
+      legacy: [/content/pkvy.php]
+      captions:
+        - { file: "20200814_124858.jpg", text: "Farmers in a field under Paramparagat Krishi Vikas Yojana" }
+        - { file: "IMG_20200819_143238.jpg", text: "PKVY field with signboard" }
+        - { file: "IMG_20200819_145335.jpg", text: "Farmers working in a PKVY field" }
+
+    - slug: celebration-of-important-days
+      title: "Celebration of Important Days"
+      folder: images/photogallery/Celebration of Important Days
+      cover: IMG-20190917-WA0010.jpg
+      legacy: [/content/celebration.php]
+      captions:
+        - { file: "Constitutional Day.jpg", text: "Constitution Day observed at the KVK" }
+        - { file: "IMG-20190917-WA0010.jpg", text: "Villagers gathered at an outdoor programme with a banner" }
+        - { file: "IMG20191001155749.jpg", text: "Participants at a programme in an auditorium" }
+        - { file: "International Women Day.jpg", text: "International Women's Day" }
+        - { file: "WhatsApp Image 2020-06-05 at 3.23.12 PM.jpeg", text: "KVK staff and farmers at an outdoor observance" }
+
+    - slug: farmer-visits
+      title: "Farmers' Visit to KVK"
+      folder: images/photogallery/Farmer Visit to KVK
+      legacy: [/content/farmer_visit.php]
+      captions:
+        - { file: "IMG20191126155719.jpg", text: "Farmers visiting the KVK, in front of the Farm Science Centre" }
+
+    - slug: field-day
+      title: "Field Day"
+      folder: images/photogallery/Field Day
+      legacy: [/content/field_day.php]
+      captions:
+        - { file: "IMG_20191111_112947496_HDR.jpg", text: "Field day in a ripe paddy field" }
+
+    - slug: fisheries
+      title: "Fisheries"
+      folder: images/photogallery/Fisheries
+      cover: DSC07390.JPG
+      legacy: [/content/fisheries.php]
+      captions:
+        - { file: "DSC07390.JPG", text: "Fish pond" }
+        - { file: "DSCN2654.JPG", text: "Pond beside a paddy field" }
+
+    - slug: frontline-demonstrations
+      title: "Frontline Demonstrations (FLD)"
+      folder: images/photogallery/FLD
+      cover: DSC00679.JPG
+      legacy: [/content/fld-photo.php]
+      captions:
+        - { file: "DSC00679.JPG", text: "Maize demonstration field" }
+        - { file: "Himalini.JPG", text: "Sowing in a frontline demonstration plot" }
+        - { file: "IMG-20190429-WA0047.jpg", text: "Farmers preparing seed rhizomes for planting" }
+        - { file: "IMG20190722135132.jpg", text: "Farmers in a maize demonstration plot with signboard" }
+        - { file: "IMG20190924112458.jpg", text: "Visit to a demonstration plot in an orchard" }
+        - { file: "IMG20190924114548.jpg", text: "Crop grown between rows of fruit trees" }
+        - { file: "IMG_20180821_123508.jpg", text: "Demonstration crop field" }
+        - { file: "WhatsApp Image 2020-06-12 at 4.32.17 PM.jpeg", text: "Young crop in rows, staked for support" }
+        - { file: "WhatsApp Image 2020-06-12 at 4.32.25 PM.jpeg", text: "Young crop in rows on a demonstration plot" }
+
+    - slug: hydroponics
+      title: "Hydroponics"
+      folder: images/photogallery/Hydroponics
+      cover: DSC00053.JPG
+      legacy: [/content/Hydroponics.php]
+      captions:
+        - { file: "DSC00053.JPG", text: "Visitors inside the hydroponics unit, with lettuce growing in channels" }
+        - { file: "IMG20190819162548.jpg", text: "Hydroponic beds with seedlings in net pots" }
+        - { file: "IMG20190819162622.jpg", text: "Seedlings growing in a hydroponic bed" }
+        - { file: "WhatsApp Image 2020-07-03 at 1.17.19 PM (1).jpeg", text: "Tomato plants grown in a hydroponic pipe system" }
+
+    - slug: on-farm-trials
+      title: "On-Farm Trials (OFT)"
+      folder: images/photogallery/OFT
+      cover: DSC00632.JPG
+      legacy: [/content/oft-photo.php]
+      captions:
+        - { file: "DSC00632.JPG", text: "Trial plot with a farmer and signboard" }
+        - { file: "DSC00652.JPG", text: "Vegetable crop grown in rows on a trial plot" }
+        - { file: "IMG-20190919-WA0000.jpg", text: "Crop grown under a shade-net house" }
+        - { file: "IMG20190722133335.jpg", text: "Trial plot with KVK signboard" }
+        - { file: "IMG20190722133611.jpg", text: "Farmers beside an on-farm trial signboard" }
+        - { file: "Shahsarang.jpg", text: "Paddy trial plot with signboard, Shahsarang" }
+        - { file: "WhatsApp Image 2019-12-30 at 6.48.48 PM.jpeg", text: "Tomato plants staked with bamboo" }
+
+    - slug: rabi-campaign
+      title: "Rabi Campaign"
+      folder: images/photogallery/Rabi Campaign
+      legacy: [/content/rabi.php]
+      captions:
+        - { file: "DSC00420.JPG", text: "Rabi campaign meeting in a conference hall" }
+
+    - slug: qrt-team-visit
+      title: "QRT Team Visit to KVK East Khasi Hills"
+      folder: images/photogallery/TeamVisit
+      cover: QRTEAM.jpg
+      legacy: [/content/teamVisit.php]
+      captions:
+        - { file: "GROUP.jpg", text: "QRT team meeting with KVK staff" }
+        - { file: "QRTEAM.jpg", text: "QRT team with KVK staff outside the KVK office" }
+
+    - slug: crops
+      title: "Crops"
+      folder: images/photogallery/Crops
+      cover: DSCN4555.JPG
+      legacy: [/content/cropsphoto.php]
+      captions:
+        - { file: "DSCN4555.JPG", text: "Visitors in a crop demonstration field" }
+        - { file: "Maize frenchbean intercropping.jpg", text: "Maize and French bean intercropping" }
+        - { file: "Maize frenchbean intercropping2.jpg", text: "Maize and French bean intercropping, another view" }
+        - { file: "Radish planted in Maize rows in one of farmers field.JPG", text: "Radish planted between maize rows in a farmer's field" }
+
+    - slug: fruits
+      title: "Fruits"
+      folder: images/photogallery/Fruits
+      cover: Pear.JPG
+      legacy: [/content/fruitsphoto.php]
+      captions:
+        - { file: "Ber fruits( Soh broi).JPG", text: "Ber fruits (soh broi)" }
+        - { file: "Pine Apple.JPG", text: "Pineapple" }
+
+    - slug: vegetables
+      title: "Vegetables"
+      folder: images/photogallery/Vegetables
+      cover: Lettuce.JPG
+      legacy: [/content/vegetablesphoto.php]
+      captions:
+        - { file: "Brocolli flowering.JPG", text: "Broccoli in flower" }
+        - { file: "Brocolli.JPG", text: "Broccoli" }
+        - { file: "Cabbage 2.JPG", text: "Cabbage field" }
+
+    - slug: kisan-mela
+      title: "Kisan Mela"
+      description: "Kisan mela cum farmers' training at Upper Shillong, January 2014."
+      folder: images/photogallery/Kisanmela
+      cover: DSCN7999.JPG
+      legacy: [/content/kisanmelaphoto.php]
+      captions:
+        - { file: "DSCN7839.JPG", text: "Visitors along the exhibition stalls" }
+        - { file: "DSCN7875.JPG", text: "Flower display at the exhibition" }
+        - { file: "DSCN7892.JPG", text: "Dignitaries on the dais at the inaugural function" }
+        - { file: "DSCN7924.JPG", text: "Speaker addressing the inaugural function" }
+        - { file: "DSCN7976.JPG", text: "Release of publications at the inaugural function" }
+        - { file: "DSCN7999.JPG", text: "Ribbon cutting to open the exhibition" }
+        - { file: "DSCN799901.JPG", text: "Dignitaries viewing exhibits of seeds and produce" }
+        - { file: "DSCN799902.JPG", text: "Prize presented to a farmer" }
+        - { file: "DSCN799905.JPG", text: "Farmers and visitors at the exhibition stalls" }
+        - { file: "DSCN799906.JPG", text: "Potted flowers displayed at the exhibition" }
+        - { file: "DSCN799915.JPG", text: "Audience at the inaugural function" }
+        - { file: "DSCN799916.JPG", text: "Dignitaries on the dais" }
+        - { file: "DSCN8004.JPG", text: "Dignitaries viewing prize-winning exhibits" }
+        - { file: "DSCN8012.JPG", text: "Visitors at the mela grounds" }
+        - { file: "DSCN8014.JPG", text: "Crowd of visitors at the mela" }
+        - { file: "DSCN8169.JPG", text: "First-prize primula" }
+        - { file: "DSCN8173.JPG", text: "First-prize cyclamen" }
+        - { file: "DSCN8176.JPG", text: "First-prize cineraria" }
+        - { file: "DSCN8177.JPG", text: "First-prize cineraria, close-up" }
+        - { file: "DSC_0009.JPG", text: "Visitors viewing seeds and products on display" }
+        - { file: "DSC_0012.JPG", text: "Dignitaries at an exhibition stall" }
+        - { file: "DSC_0013.JPG", text: "Dignitaries visiting the stalls" }
+        - { file: "DSC_0017.JPG", text: "Dignitaries talking with exhibitors" }
+        - { file: "DSC_0021.JPG", text: "Farmers viewing seed samples on display" }
+        - { file: "DSC_0356.JPG", text: "Power tiller on display" }
+        - { file: "DSC_0365.JPG", text: "Prize presented to a farm woman" }
+        - { file: "DSC_0367.JPG", text: "Farmers receiving prizes" }
+        - { file: "DSC_0937.JPG", text: "Audience at the kisan mela" }
+
+    - slug: sac-meeting
+      title: "Scientific Advisory Committee (SAC) Meeting"
+      folder: images/photogallery/SAC
+      cover: SACMeeting.jpg
+      legacy: [/content/sac_meeting.php]
+      captions:
+        - { file: "SACMeeting.jpg", text: "Scientific Advisory Committee meeting in progress" }
+
+    - slug: training-and-awareness
+      title: "Training and Awareness"
+      folder: images/photogallery/TrainingandAwareness
+      cover: Awareness 1.JPG
+      legacy: [/content/training_and_awareness.php]
+      captions:
+        - { file: "1.jpg", text: "Outdoor training session with participants seated around a banner" }
+        - { file: "2.jpeg", text: "Awareness programme participants with a banner on a village road" }
+        - { file: "Audience.jpg", text: "Audience at an awareness programme in a hall" }
+        - { file: "Awareness 1.JPG", text: "Participants of an awareness programme with the KVK banner" }
+        - { file: "CHC.jpg", text: "Skill training of rural youth on custom hiring centres" }
+        - { file: "DSC00151.JPG", text: "Presentation during a training session" }
+        - { file: "DSC01311.JPG", text: "Practical session during a training programme" }
+        - { file: "DSC02479.JPG", text: "Trainees with a KVK banner beside a polyhouse" }
+        - { file: "DSC09305.JPG", text: "Trainees with certificates after skill training on production of bio-control agents" }
+        - { file: "DSCN0818.JPG", text: "Trainees with an on-campus training banner" }
+        - { file: "IMG20200128153711.jpg", text: "Participants at a programme in an auditorium" }
+        - { file: "IMG_20200819_141858.jpg", text: "Participants of a field awareness programme with a banner" }
+        - { file: "IPM.jpg", text: "Skill training of rural youth on integrated pest management in fruits" }
+        - { file: "Mihila Kisan Dewas.jpg", text: "Mahila Kisan Diwas celebration" }
+        - { file: "NITIAYOG.JPG", text: "Meeting during a NITI Aayog visit" }
+        - { file: "Raweb student.jpg", text: "Students with certificates after their work experience programme at the KVK" }
+        - { file: "STRY.JPG", text: "Participants of skill training of rural youth (STRY)" }
+        - { file: "Swatch Bharat.jpg", text: "Swachh Bharat programme participants with banner" }
+        - { file: "Swatch Bharat1.JPG", text: "Swachh Bharat cleanliness drive" }
+        - { file: "Training.JPG", text: "Participants of a training programme with the KVK banner" }
+        - { file: "World Productivity day.JPG", text: "World Productivity Day programme" }
+
+    - slug: farmer-innovation
+      title: "Farmer Innovation"
+      folder: images/photogallery/farmerinnovation
+      cover: MODF5.jpg
+      legacy: [/content/farmerinnovation.php]
+      captions:
+        - { file: "DSCN6316.jpg", text: "Bags and items woven from plant fibre" }
+        - { file: "DSCN6323.JPG", text: "Women weaving with leaf fibre" }
+        - { file: "DSCN6335.jpg", text: "Crocheted items made from plant fibre" }
+        - { file: "MODF2.jpg", text: "Hen in a laying cabin; sawdust on the cabin floor prevents breakage of eggs" }
+        - { file: "MODF5.jpg", text: "Poultry shed with laying cabins, so eggs are no longer laid on the hard open floor" }
+        - { file: "Mr Wallamkupar Lyngrah.jpg", text: "Shri Wallamkupar Lyngrah with his certificate" }
+        - { file: "vlcsnap-2014-03-11-14h09m50s121.jpg", text: "Women preparing leaf fibre" }
+        - { file: "vlcsnap-2014-03-11-14h12m55s178.jpg", text: "Women weaving with plant fibre" }
+
+    - slug: demonstrations
+      title: "Demonstrations"
+      folder: images/photogallery/demonstrations
+      cover: 3.jpg
+      legacy: [/content/demonstrations.php]
+      captions:
+        - { file: "3.jpg", text: "Demonstration plot being planted on a hillside" }
+        - { file: "DSCN0010.JPG", text: "Planting in furrows during a demonstration" }
+        - { file: "DSCN0185.JPG", text: "Vermicompost bed demonstration" }
+        - { file: "DSCN9964.JPG", text: "Farmers handling seed rhizomes" }
+        - { file: "Ginger OFT.JPG", text: "Planting ginger in an on-farm trial" }
+        - { file: "Vermi bed at KVK.jpg", text: "Vermicompost beds at the KVK" }
+
+    - slug: mushroom
+      title: "Mushroom"
+      folder: images/photogallery/Mushroom
+      cover: DSC00709.JPG
+      legacy: [/content/mushroom.php]
+      captions:
+        - { file: "DSC00709.JPG", text: "Oyster mushroom bags on racks in a growing room" }
+        - { file: "DSCN1233.JPG", text: "Mushroom bags in a thatched growing shed" }
+        - { file: "DSCN9338.JPG", text: "Participants of an on-farm trial on mushroom cultivation" }
+        - { file: "DSCN9402.JPG", text: "Oyster mushrooms growing from a hanging straw bag" }
+        - { file: "DSCN9841.JPG", text: "Mushroom bags on shelves" }
+        - { file: "DSCN9843.JPG", text: "Oyster mushrooms growing on a straw bag" }
+        - { file: "DSCN9865.JPG", text: "Hanging mushroom bags in a growing room" }
+        - { file: "IMG-20170728-WA0000.jpg", text: "Mixing straw substrate with spawn" }
+        - { file: "IMG-20171026-WA0015.jpg", text: "White oyster mushrooms" }
+        - { file: "IMG-20190520-WA0007.jpg", text: "Drying straw for mushroom substrate" }
+        - { file: "IMG-20190621-WA0032.jpg", text: "Harvesting oyster mushrooms" }
+        - { file: "IMG20190722123054.jpg", text: "Mushroom growing hut with growers" }
+        - { file: "ka rukom rep ia ki tit oister ha ki pla palstic.JPG", text: "Filling plastic bags with substrate for oyster mushroom" }
+        - { file: "kaba thung.JPG", text: "Mushroom bags hanging in a growing room" }
+        - { file: "ki tit oister kiba lah long ban kheit.JPG", text: "Oyster mushrooms ready for harvest" }
+
+    - slug: animal-disease-control
+      title: "National Animal Disease Control Programme"
+      folder: images/photogallery/ProgrammePics
+      cover: groupphoto.jpg
+      legacy: [/content/programmePics.php]
+      captions:
+        - { file: "ArtificailInsemination.jpg", text: "Artificial insemination of a cow" }
+        - { file: "farm.jpg", text: "Dairy cattle shed" }
+        - { file: "groupphoto.jpg", text: "Programme participants outside the office" }
+        - { file: "Talk.jpg", text: "Talk during the programme" }
+
+    - slug: buckwheat-trial
+      title: "Buckwheat Trial"
+      folder: images/photogallery/BuckwheatTrial
+      cover: 1.jpg
+      legacy: [/content/buckwheattrial.php]
+      captions:
+        - { file: "1.jpg", text: "Buckwheat in flower in a trial plot" }
+        - { file: "2.jpg", text: "Buckwheat trial field" }
+        - { file: "3.jpg", text: "Buckwheat crop in a trial plot" }
+
+    - slug: other-photos
+      title: "Other Photos"
+      folder: images/photogallery/OthersPhotos
+      cover: image2.jpg
+      legacy: [/content/otherPhotos.php]
+      captions:
+        - { file: "image1.JPG", text: "Field prepared with drip irrigation lines" }
+        - { file: "image10.JPG", text: "Planting in prepared furrows" }
+        - { file: "image11.jpg", text: "Mahila Kisan Diwas participants with banner" }
+        - { file: "image12.jpg", text: "Mahila Kisan Diwas 2017 programme in a hall" }
+        - { file: "image13.jpg", text: "Mushroom bags on racks" }
+        - { file: "image14.JPG", text: "Training session in a hall" }
+        - { file: "image15.JPG", text: "Oyster mushrooms growing on a hanging bag" }
+        - { file: "image16.jpg", text: "Ribbon cutting at an inauguration" }
+        - { file: "image17.JPG", text: "Soil health campaign participants with banner" }
+        - { file: "image18.JPG", text: "Farmers at an outdoor meeting addressed by a speaker" }
+        - { file: "image19.JPG", text: "World Soil Day 2016 programme" }
+        - { file: "image2.jpg", text: "District-level kisan mela" }
+        - { file: "image20.jpg", text: "Meeting with officials in a conference room" }
+        - { file: "image21.jpg", text: "Visitors and KVK staff outside the KVK office" }
+        - { file: "image3.JPG", text: "Vermicompost bed" }
+        - { file: "image4.JPG", text: "Farmers in a crop field" }
+        - { file: "image5.JPG", text: "World Food Day 2016 programme" }
+        - { file: "image6.JPG", text: "Crop field" }
+        - { file: "image7.JPG", text: "Visitors inside a flower polyhouse" }
+        - { file: "image8.jpg", text: "Trainees with a banner beside a polyhouse" }
+        - { file: "image9.JPG", text: "Gerbera flowers growing in a polyhouse" }

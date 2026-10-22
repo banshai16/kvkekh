@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--/* Document list. Every download shows its format and size (GIGW 3.0); non-English titles carry lang. */-->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<ul th:fragment="list(documents)" class="doc-list">
+    <li th:each="d : ${documents}">
+        <th:block th:if="${d.available}">
+            <a th:href="@{${d.url}}" th:lang="${d.lang}" th:text="${d.title}">Title</a><th:block th:if="${d.date != null}">,
+                <span th:text="${d.date}">March 2019</span></th:block>
+            <span class="doc-meta" th:if="${d.download}"
+                  th:text="${d.size != null} ? ${'(' + d.type + ', ' + d.size + ')'} : ${'(' + d.type + ')'}">(PDF, 2.5 MB)</span>
+            <span class="doc-meta" th:if="${d.lang == 'kha'}">— in Khasi</span>
+        </th:block>
+        <th:block th:unless="${d.available}">
+            <span th:lang="${d.lang}" th:text="${d.title}">Title</span>
+            <span class="doc-meta">(currently unavailable)</span>
+        </th:block>
+    </li>
+</ul>
+</body>
+</html>

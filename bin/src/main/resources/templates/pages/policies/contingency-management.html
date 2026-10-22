@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--/* DRAFT for approval by the Department before go-live (GIGW 3.0 website policies). */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>This plan describes how the website is kept available and restored if something goes wrong.</p>
+        <h2>Content errors</h2>
+        <p>If incorrect or unapproved content is published, it is removed or corrected immediately by the Web
+            Content Manager on the instruction of the Senior Scientist and Head.</p>
+        <h2>Security incidents</h2>
+        <p>If the website is defaced or compromised, it is taken offline and the National Informatics Centre and
+            CERT-In are informed. The website is restored from a verified backup only after the cause has been found
+            and fixed.</p>
+        <h2>Data and server failure</h2>
+        <p>The website's content, media files and database are backed up regularly by the hosting team, so that the
+            website can be restored on another server if the hosting server fails.</p>
+        <h2>Natural disasters and other emergencies</h2>
+        <p>The website is hosted by the National Informatics Centre, whose data centres have their own disaster
+            recovery arrangements.</p>
+    </div>
+</th:block>
+</body>
+</html>

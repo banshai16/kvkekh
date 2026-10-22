@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Besides the <a th:href="@{/help}">accessibility controls</a> on this website, every modern browser lets
+            you enlarge pages and text for all the websites you visit. Menu names may differ slightly between browser
+            versions.</p>
+
+        <h2>Zoom with the keyboard (all desktop browsers)</h2>
+        <ul>
+            <li>Zoom in: <kbd>Ctrl</kbd> + <kbd>+</kbd> (on a Mac, <kbd>Cmd</kbd> + <kbd>+</kbd>)</li>
+            <li>Zoom out: <kbd>Ctrl</kbd> + <kbd>−</kbd> (on a Mac, <kbd>Cmd</kbd> + <kbd>−</kbd>)</li>
+            <li>Return to normal size: <kbd>Ctrl</kbd> + <kbd>0</kbd> (on a Mac, <kbd>Cmd</kbd> + <kbd>0</kbd>)</li>
+        </ul>
+        <p>You can also hold <kbd>Ctrl</kbd> and turn the mouse wheel.</p>
+
+        <h2>Google Chrome</h2>
+        <p>Open <strong>Settings</strong>, then <strong>Appearance</strong>, and set <strong>Font size</strong> and
+            <strong>Page zoom</strong>. Under <strong>Customise fonts</strong> you can also set a minimum font size.</p>
+
+        <h2>Microsoft Edge</h2>
+        <p>Open <strong>Settings</strong>, then <strong>Appearance</strong>, and change <strong>Zoom</strong> or, under
+            <strong>Fonts</strong>, the font size. Edge's <strong>Immersive Reader</strong> (in the address bar, or
+            <kbd>F9</kbd>) shows a page as plain, enlargeable text and can read it aloud.</p>
+
+        <h2>Mozilla Firefox</h2>
+        <p>Open <strong>Settings</strong>, then <strong>General</strong>. Under <strong>Zoom</strong> choose a default
+            zoom, and tick <strong>Zoom text only</strong> to enlarge text without images. Under <strong>Fonts</strong>,
+            select <strong>Advanced</strong> to set a minimum font size.</p>
+
+        <h2>Safari (Mac)</h2>
+        <p>Open <strong>Settings</strong>, then <strong>Websites</strong>, and choose a <strong>Page Zoom</strong>. Under
+            <strong>Advanced</strong>, you can tick <strong>Never use font sizes smaller than</strong>.</p>
+
+        <h2>Phones and tablets</h2>
+        <ul>
+            <li><strong>Android:</strong> pinch to zoom, or in Chrome open <strong>Settings</strong>, then
+                <strong>Accessibility</strong>, and adjust <strong>Text scaling</strong>.</li>
+            <li><strong>iPhone and iPad:</strong> pinch to zoom, or in Safari tap the <strong>aA</strong> button in the
+                address bar to change text size. For all apps, open <strong>Settings</strong>, then
+                <strong>Accessibility</strong>, then <strong>Display &amp; Text Size</strong>.</li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

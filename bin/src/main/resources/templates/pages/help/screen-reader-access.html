@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Assistive technologies help people with visual, hearing, mobility or learning impairments to use websites.
+            Screen readers convert the text on a page into synthesised speech or braille, so that visually impaired
+            users can listen to and navigate its content.</p>
+        <p>This website is built to work with screen readers: pages use proper headings and landmarks, images have
+            text alternatives, links and buttons have descriptive names, and every function can be used from the
+            keyboard.</p>
+        <p>Commonly used screen readers include:</p>
+    </div>
+
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Screen readers">
+        <table>
+            <caption>Screen readers and where to get them</caption>
+            <thead>
+            <tr><th scope="col">Screen reader</th><th scope="col">Platform</th><th scope="col">Free or commercial</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"><a href="https://www.nvaccess.org/" rel="noopener">NVDA (NonVisual Desktop Access)<svg th:replace="~{fragments/icons :: external}"></svg><span class="visually-hidden">(external website)</span></a></th>
+                <td>Windows</td><td>Free</td>
+            </tr>
+            <tr>
+                <th scope="row">Narrator</th>
+                <td>Windows (built in)</td><td>Free</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://www.freedomscientific.com/products/software/jaws/" rel="noopener">JAWS (Job Access With Speech)<svg th:replace="~{fragments/icons :: external}"></svg><span class="visually-hidden">(external website)</span></a></th>
+                <td>Windows</td><td>Commercial</td>
+            </tr>
+            <tr>
+                <th scope="row">VoiceOver</th>
+                <td>macOS and iOS (built in)</td><td>Free</td>
+            </tr>
+            <tr>
+                <th scope="row">TalkBack</th>
+                <td>Android (built in)</td><td>Free</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>
+</body>
+</html>

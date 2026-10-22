@@ -1,0 +1,103 @@
+# Downloadable documents and notices. Paths are relative to media.root.
+# File type and size are read from disk at startup; a missing file is logged and shown without a link.
+#
+#   title  link text (describe the document, not "click here")
+#   file   media-relative path to the document   — or —   link: a page path on this site
+#   lang   BCP 47 code when the document is not in English (kha = Khasi)
+#   date   optional free-text date or period shown after the title
+#   archived  date the item was moved to the archive. Archived items leave their list and appear on the
+#             Archive page (GIGW: outdated content is archived with its archival date, not deleted).
+documents:
+  collections:
+    - id: notices
+      title: "What's New"
+      items:
+        - title: "Selected candidates for the non-technical posts at KVK East Khasi Hills"
+          file: advertisement/Resultsnontechnicalpost.pdf
+          archived: 2026-10-16
+        - title: "List of rejected candidates for the non-technical posts"
+          file: advertisement/REJECTED CANDIDATES.pdf
+          archived: 2026-10-16
+        - title: "Advertisement for non-technical posts"
+          file: advertisement/Advt_kvkekhMar2019.pdf
+          date: "March 2019"
+          archived: 2026-10-16
+        - title: "Kisan Mela"
+          link: /stories/kisan-mela
+          date: "January 2014"
+          archived: 2026-10-16
+
+    - id: annual-reports
+      title: "Annual Reports"
+      items:
+        - title: "Proforma Annual Report 2021"
+          file: publication/Annual Report 2021.pdf
+        - title: "Proforma Annual Report 2019-20"
+          file: publication/AnnualReportfortheYear2019-20.pdf
+        - title: "Proforma Annual Report 2018-19"
+          file: publication/AnnualReport2018-19.pdf
+        - title: "Proforma Annual Report 2015-16"
+          file: publication/ProformaAnnualReport_2015-16.pdf
+
+    - id: leaflets
+      title: "Extension Leaflets"
+      items:
+        - title: "Cabbage Cultivation"
+          file: publication/Cabbage cultivation.pdf
+        - title: "Cauliflower Cultivation"
+          file: publication/Cauliflower cultivation.pdf
+        - title: "Potato Cultivation"
+          file: publication/Potato cultivation.pdf
+        - title: "Ginger Cultivation"
+          file: publication/Ginger Cultivation.pdf
+        - title: "Integrated Disease Management (IDM) in Rice"
+          file: publication/IDM on Rice.pdf
+        - title: "Integrated Pest Management (IPM) in Rice"
+          file: publication/IPM on Rice.pdf
+        - title: "Biopesticides"
+          file: publication/Biopesticides Leaflet.pdf
+        - title: "Mushroom Cultivation"
+          file: publication/Mushroom Leaflet.pdf
+        - title: "Khasi Mandarin"
+          file: publication/khasi manderin.pdf
+        - title: "Pests and Diseases of Khasi Mandarin"
+          file: publication/Pest Diseases of Khasi Mandarin.pdf
+        - title: "Vegetable Kitchen Garden"
+          file: publication/kitchen garden.pdf
+
+    - id: leaflets-khasi
+      title: "Leaflets in Khasi"
+      items:
+        - title: "Ka Rukom Pynbiang Sboh ha ba Rep Phan"
+          file: publication/ka rukom pynbiang ha u phan.pdf
+          lang: kha
+        - title: "Ka Rukom Rep Phan"
+          file: publication/Ka rukom rep Phan.pdf
+          lang: kha
+        - title: "Ka Rep Kyrpong Iing"
+          file: publication/karep kyrpong iing.pdf
+          lang: kha
+
+    - id: success-stories
+      title: "Success Stories Publications"
+      items:
+        - title: "Success Stories of KVKs, ICAR-ATARI (Zone III)"
+          file: publication/SuccessStories_ICAR_ATARI_Zone3.pdf
+
+    - id: newsletters
+      title: "Newsletters"
+      items:
+        - title: "Newsletter, January – June 2013"
+          file: newsletter/Newsletter Jan - June 2013 new.pdf
+        - title: "Newsletter, July – December 2012"
+          file: newsletter/Newsletter July-December 2012.pdf
+        - title: "Newsletter, January – June 2012"
+          file: newsletter/Jan-Jun 2012.pdf
+        - title: "Newsletter, July – December 2011"
+          file: newsletter/July-Dec 2011.pdf
+        - title: "Newsletter, January – June 2011"
+          file: newsletter/Jan-Jun 2011.pdf
+        - title: "Newsletter, July – December 2010"
+          file: newsletter/July-Dec 2010.pdf
+        - title: "Newsletter, January – June 2010"
+          file: newsletter/Jan-June 2010.pdf

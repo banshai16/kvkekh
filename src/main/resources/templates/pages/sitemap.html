@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--/* DBIM 5.6: hierarchical sitemap with at least two levels, generated from the global navigation. */-->
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <ul class="prose">
+        <li th:each="item : ${menu}">
+            <a th:unless="${item.group}" th:href="@{${item.path}}" th:text="${item.label}">Home</a>
+            <th:block th:if="${item.group}"><strong th:text="${item.label}">About</strong></th:block>
+            <ul th:unless="${item.children.isEmpty()}">
+                <li th:each="child : ${item.children}"><a th:href="@{${child.path}}" th:text="${child.label}">Page</a></li>
+            </ul>
+        </li>
+        <li>
+            <strong>Help and Policies</strong>
+            <ul>
+                <li th:each="link : ${footerLinks}" th:unless="${link.path == currentPath}">
+                    <a th:href="@{${link.path}}" th:text="${link.label}">Help</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:kvkekh-test;DB_CLOSE_DELAY=-1
+
+media:
+  root: src/test/resources/test-media
+  cache-dir: target/test-image-cache
+  warm-cache: false
+
+feedback:
+  recipient: kvk@example.org
+  sender: website@example.org
+  # The rate limiter is covered by its own unit test; keep it out of the way of the MVC tests.
+  max-per-hour: 1000
+
+site:
+  # Absolute URLs from the request (http://localhost) so tests do not depend on the production host.
+  base-url: ""

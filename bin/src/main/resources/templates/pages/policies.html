@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>The policies that govern the use of this website:</p>
+        <ul>
+            <li th:each="item : ${section.children}"><a th:href="@{${item.path}}" th:text="${item.label}">Policy</a></li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <p class="prose">Photographs of the KVK's activities, demonstrations, crops and events. Select an album to see
+        its photos.</p>
+    <ul class="album-grid">
+        <li th:each="a : ${albums}">
+            <a class="album-card" th:href="@{${a.path}}">
+                <span class="album-card__media">
+                    <img th:src="@{${a.cover.thumbUrl}}" alt="" loading="lazy" width="640" height="480">
+                </span>
+                <span class="album-card__title" th:text="${a.album.title}">Album</span>
+                <span class="album-card__meta" th:text="${a.photos.size() == 1} ? '1 photo' : ${a.photos.size() + ' photos'}">12 photos</span>
+            </a>
+        </li>
+    </ul>
+</th:block>
+</body>
+</html>

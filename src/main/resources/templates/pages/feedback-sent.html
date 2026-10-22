@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <div class="confirmation" role="status">
+            <p>We have received your feedback.</p>
+            <p th:if="${reference != null}">Your reference number is <strong class="reference" th:text="${reference}">FB-7K3M9Q</strong></p>
+        </div>
+        <p>We will reply to you by email. If you need to contact us about this message, please quote the reference
+            number.</p>
+        <p><a th:href="@{/}">Return to the home page</a></p>
+    </div>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <h2>Accessibility controls</h2>
+        <p>Select <strong>Accessibility</strong> at the top right of every page to open the accessibility controls.
+            Your choices are remembered in this browser until you select <strong>Reset all</strong>.</p>
+        <dl class="facts facts--stacked">
+            <dt>Dark contrast</dt>
+            <dd>Shows light text on a dark background.</dd>
+            <dt>Invert</dt>
+            <dd>Inverts the colours of the page.</dd>
+            <dt>Saturation</dt>
+            <dd>Shows the page in shades of grey, for users who find colour distracting.</dd>
+            <dt>Text size increase / decrease</dt>
+            <dd>Makes all text up to 50 per cent larger, or slightly smaller.</dd>
+            <dt>Highlight links</dt>
+            <dd>Underlines every link and gives it a yellow background.</dd>
+            <dt>Hide images</dt>
+            <dd>Hides the photographs in the main content, to reduce distraction.</dd>
+            <dt>Big cursor</dt>
+            <dd>Shows a larger mouse pointer.</dd>
+        </dl>
+        <p>Other help:</p>
+        <ul>
+            <li>Select <strong>Skip to main content</strong> (or press <kbd>Tab</kbd> once after the page loads) to
+                jump past the menus.</li>
+            <li>Every page can be used with the keyboard alone: <kbd>Tab</kbd> moves between links and buttons,
+                <kbd>Enter</kbd> activates them, and <kbd>Esc</kbd> closes an open menu.</li>
+            <li><a th:href="@{/help/screen-reader-access}">Screen reader access</a></li>
+            <li><a th:href="@{/help/accessibility-options-in-browsers}">Accessibility options in your browser</a></li>
+            <li><a th:href="@{/help/accessibility-statement}">Accessibility statement</a></li>
+        </ul>
+
+        <h2>Viewing documents</h2>
+        <p>Reports, leaflets and newsletters on this website are in Portable Document Format (PDF). Every link shows
+            the file format and size before you download it. Current web browsers open PDF files directly; you can
+            also use any PDF reader, such as the free
+            <a href="https://get.adobe.com/reader/" rel="noopener">Adobe Acrobat Reader<svg th:replace="~{fragments/icons :: external}"></svg><span class="visually-hidden">(external website)</span></a>.</p>
+
+        <h2>Still need help?</h2>
+        <p>Please <a th:href="@{/contact-us}">contact us</a> or send <a th:href="@{/feedback}">feedback</a> and tell us
+            which page you were on and what went wrong.</p>
+    </div>
+</th:block>
+</body>
+</html>

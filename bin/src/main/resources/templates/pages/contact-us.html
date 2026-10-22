@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="contact-grid">
+        <section class="card" aria-labelledby="contact-office">
+            <h2 id="contact-office">Office</h2>
+            <address class="address-block">
+                <th:block th:each="line : ${site.contact.addressLines}"><span th:text="${line}">Address</span><br></th:block>
+                Phone: <a th:href="${'tel:' + site.contact.phone}" th:text="${site.contact.phone}">0364-2560132</a><br>
+                Email: <th:block th:each="email, st : ${site.contact.emails}"><span th:text="${email}">email</span><th:block th:unless="${st.last}">, </th:block></th:block>
+            </address>
+        </section>
+
+        <!--/* TODO: confirm both officers are still in post before go-live (legacy data). */-->
+        <section class="card" aria-labelledby="contact-wim">
+            <h2 id="contact-wim">Web Information Manager</h2>
+            <address class="address-block">
+                Shri Shanmebansan Marbaniang<br>
+                Subject Matter Specialist (Extension)<br>
+                Phone: <a href="tel:+919863288467">98632 88467</a><br>
+                Email: seanmay[dot]or[dot]b[at]gmail[dot]com
+            </address>
+        </section>
+
+        <section class="card" aria-labelledby="contact-wcm">
+            <h2 id="contact-wcm">Web Content Manager</h2>
+            <address class="address-block">
+                Shri Koles A. Muktieh<br>
+                Programme Assistant (Computer)<br>
+                Phone: <a href="tel:+919615138490">96151 38490</a><br>
+                Email: kmuktieh[at]gmail[dot]com
+            </address>
+        </section>
+    </div>
+    <p class="contact-feedback">To share a suggestion or report a problem with this website, use the
+        <a th:href="@{/feedback}">feedback form</a>.</p>
+</th:block>
+</body>
+</html>

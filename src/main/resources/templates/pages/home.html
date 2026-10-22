@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <h1 class="visually-hidden" th:text="${site.name}">Krishi Vigyan Kendra, East Khasi Hills</h1>
+
+    <!--/* A single static banner: auto-rotating carousels fail GIGW/WCAG 2.2.2 unless they can be paused. */-->
+    <figure class="banner">
+        <img th:src="@{/assets/img/onedayprogram.jpg}" width="800" height="365"
+             alt="Officials releasing leaflets at the farmers' fair and awareness programme on Pradhan Mantri Fasal Bima Yojana">
+        <figcaption>One-day Farmers' Fair and Awareness Programme on Pradhan Mantri Fasal Bima Yojana (PMFBY), organised by KVK East Khasi Hills.</figcaption>
+    </figure>
+
+    <div class="container home-grid">
+        <section class="card card--wide" aria-labelledby="home-about">
+            <h2 id="home-about">About Us</h2>
+            <p>Krishi Vigyan Kendra is an innovative institution with a multidisciplinary team of subject matter
+                specialists for taking up various frontline programmes in agricultural and allied sectors. These
+                include on-farm testing to identify the location specificity of technology, frontline demonstrations
+                to establish its production potential on farmers' fields, training of farmers to update their
+                knowledge and skills, and training of extension personnel to orient them in the frontier areas of
+                technology development.</p>
+            <a class="btn" th:href="@{/about/kvk}">Read more</a>
+        </section>
+
+        <section class="card" aria-labelledby="home-news">
+            <h2 id="home-news">What's New</h2>
+            <!--/* Items come from the "notices" collection in content/documents.yml; archived items are not shown. */-->
+            <th:block th:with="notices=${docs['notices'].current}">
+                <th:block th:unless="${notices.isEmpty()}" th:replace="~{fragments/documents :: list(${notices})}"></th:block>
+                <p th:if="${notices.isEmpty()}">There are no current notices.</p>
+            </th:block>
+            <p><a th:href="@{/documents/archive}">Archived notices and documents</a></p>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="home-district">
+            <h2 id="home-district">District Profile</h2>
+            <div class="profile">
+                <img th:src="@{/images/Map1.jpg}" width="320" height="185"
+                     alt="Map of East Khasi Hills district showing its blocks: Mawphlang, Mylliem, Mawryngkneng, Khatarshnong-Laitkroh, Mawsynram, Mawkynrew, Pynursla and Shella-Bholaganj">
+                <div>
+                    <h3>How to reach</h3>
+                    <dl class="facts">
+                        <dt>Location</dt><dd>Fifth Mile, Upper Shillong</dd>
+                        <dt>Landmark</dt><dd>State Biological Control Laboratory</dd>
+                        <dt>From head department</dt><dd class="num">10 km</dd>
+                        <dt>From main city</dt><dd class="num">10 km</dd>
+                        <dt>Population</dt><dd class="num">8,24,059</dd>
+                        <dt>Total area</dt><dd class="num">2,748 sq. km</dd>
+                        <dt>Population density</dt><dd class="num">292 per sq. km</dd>
+                    </dl>
+                    <a th:href="@{/about/district-profile}">District profile in detail</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="home-quick">
+            <h2 id="home-quick">Quick Links</h2>
+            <ul class="news-list">
+                <li><a th:href="@{/activities/training}">Training programmes</a></li>
+                <li><a th:href="@{/activities/frontline-demonstrations}">Frontline demonstrations</a></li>
+                <li><a th:href="@{/activities/on-farm-trials}">On-farm trials</a></li>
+                <li><a th:href="@{/documents/publications}">Publications and annual reports</a></li>
+                <li><a th:href="@{/gallery}">Photo gallery</a></li>
+            </ul>
+        </section>
+    </div>
+</th:block>
+</body>
+</html>

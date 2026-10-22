@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="form-page">
+        <div class="error-summary" th:unless="${errorLinks.isEmpty()}" role="alert" tabindex="-1" data-error-summary
+             aria-labelledby="error-summary-title">
+            <h2 id="error-summary-title">There is a problem</h2>
+            <ul>
+                <li th:each="e : ${errorLinks}"><a th:href="${'#' + e.field}" th:text="${e.message}">Enter your name</a></li>
+            </ul>
+        </div>
+
+        <div class="error-summary" th:if="${rateLimited}" role="alert" tabindex="-1" data-error-summary>
+            <h2>Too many submissions</h2>
+            <p>We have received several messages from your connection in the last hour. Please try again later, or
+                <a th:href="@{/contact-us}">contact us</a> directly.</p>
+        </div>
+
+        <p class="prose">Use this form to send us a question, suggestion or complaint about the KVK or this website.
+            We will reply to you by email. All fields are required.</p>
+
+        <form class="form" th:action="@{/feedback}" th:object="${feedbackForm}" method="post" novalidate>
+            <div class="field" th:classappend="${#fields.hasErrors('name')} ? 'field--error'">
+                <label for="name">Full name <span class="field__required">(required)</span></label>
+                <p class="field__error" id="name-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Enter your name</p>
+                <input type="text" th:field="*{name}" autocomplete="name" maxlength="100" spellcheck="false"
+                       th:attr="aria-invalid=${#fields.hasErrors('name')},aria-describedby=${#fields.hasErrors('name')} ? 'name-error'">
+            </div>
+
+            <div class="field" th:classappend="${#fields.hasErrors('location')} ? 'field--error'">
+                <label for="location">Village, town or district <span class="field__required">(required)</span></label>
+                <p class="field__error" id="location-error" th:if="${#fields.hasErrors('location')}" th:errors="*{location}">Error</p>
+                <input type="text" th:field="*{location}" autocomplete="address-level2" maxlength="100"
+                       th:attr="aria-invalid=${#fields.hasErrors('location')},aria-describedby=${#fields.hasErrors('location')} ? 'location-error'">
+            </div>
+
+            <div class="field" th:classappend="${#fields.hasErrors('email')} ? 'field--error'">
+                <label for="email">Email address <span class="field__required">(required)</span></label>
+                <p class="field__hint" id="email-hint">We will only use this to reply to you.</p>
+                <p class="field__error" id="email-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</p>
+                <input type="email" th:field="*{email}" autocomplete="email" maxlength="254" spellcheck="false"
+                       th:attr="aria-invalid=${#fields.hasErrors('email')},aria-describedby=${#fields.hasErrors('email')} ? 'email-hint email-error' : 'email-hint'">
+            </div>
+
+            <div class="field" th:classappend="${#fields.hasErrors('message')} ? 'field--error'">
+                <label for="message">Your feedback <span class="field__required">(required)</span></label>
+                <p class="field__hint" id="message-hint" th:text="${'Up to ' + #numbers.formatInteger(messageMax, 1, 'COMMA') + ' characters. Do not include personal details we do not need, such as bank or Aadhaar numbers.'}">Hint</p>
+                <p class="field__error" id="message-error" th:if="${#fields.hasErrors('message')}" th:errors="*{message}">Error</p>
+                <textarea th:field="*{message}" rows="8" th:maxlength="${messageMax}"
+                          th:attr="aria-invalid=${#fields.hasErrors('message')},aria-describedby=${#fields.hasErrors('message')} ? 'message-hint message-error' : 'message-hint'"></textarea>
+            </div>
+
+            <div class="field field--honeypot" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" th:field="*{website}" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="field" th:classappend="${#fields.hasErrors('consent')} ? 'field--error'">
+                <p class="field__error" id="consent-error" th:if="${#fields.hasErrors('consent')}" th:errors="*{consent}">Error</p>
+                <div class="checkbox">
+                    <input type="checkbox" id="consent" th:field="*{consent}"
+                           th:attr="aria-invalid=${#fields.hasErrors('consent')},aria-describedby=${#fields.hasErrors('consent')} ? 'consent-error'">
+                    <label for="consent">I agree that KVK East Khasi Hills may use these details to
+                        reply to me, as described in the <a th:href="@{/policies/privacy}">privacy policy</a>.
+                        <span class="field__required">(required)</span></label>
+                </div>
+            </div>
+
+            <div class="field" th:classappend="${#fields.hasErrors('captchaAnswer')} ? 'field--error'">
+                <label for="captchaAnswer"><span th:text="${captchaQuestion}">What is four plus 7?</span> <span class="field__required">(required)</span></label>
+                <p class="field__hint" id="captcha-hint">Enter the answer as a number. This helps us block automated spam.</p>
+                <p class="field__error" id="captchaAnswer-error" th:if="${#fields.hasErrors('captchaAnswer')}" th:errors="*{captchaAnswer}">Error</p>
+                <!--/* No th:field: the answer to a previous question must never be shown again. */-->
+                <input type="text" id="captchaAnswer" name="captchaAnswer" value="" class="input--short" inputmode="numeric" autocomplete="off" maxlength="3"
+                       th:attr="aria-invalid=${#fields.hasErrors('captchaAnswer')},aria-describedby=${#fields.hasErrors('captchaAnswer')} ? 'captcha-hint captchaAnswer-error' : 'captcha-hint'">
+            </div>
+
+            <button type="submit" class="btn">Send feedback</button>
+        </form>
+    </div>
+</th:block>
+</body>
+</html>

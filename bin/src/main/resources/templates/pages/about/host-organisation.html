@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Krishi Vigyan Kendra, East Khasi Hills is hosted by the Department of Agriculture, Government of Meghalaya.</p>
+
+        <h2>Host institute</h2>
+        <p>Department of Agriculture, Government of Meghalaya</p>
+
+        <h2>Head of host institute</h2>
+        <address class="address-block">
+            Director of Agriculture, Government of Meghalaya<br>
+            Lower Cleve Colony, East Khasi Hills District<br>
+            Shillong, Meghalaya – 793003<br>
+            <!--/* TODO: legacy site labels these "(DA)" and "(DH)"; confirm the expansions with KVK. */-->
+            Phone: <a href="tel:03642223228">0364-2223228</a> (DA), <a href="tel:03642227434">0364-2227434</a> (DH)<br>
+            Email: agri-meg[at]nic[dot]in
+        </address>
+    </div>
+</th:block>
+</body>
+</html>

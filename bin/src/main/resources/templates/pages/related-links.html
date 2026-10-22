@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>The following websites are maintained by other organisations. They open in the same window; use your
+            browser's back button to return.</p>
+        <ul class="link-list">
+            <li th:each="link : ${site.relatedLinks}">
+                <a th:href="${link.href}" rel="noopener"><th:block th:text="${link.label}">Link</th:block><svg th:replace="~{fragments/icons :: external}"></svg><span class="visually-hidden">(external website)</span></a>
+            </li>
+        </ul>
+    </div>
+</th:block>
+</body>
+</html>

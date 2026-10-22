@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html th:replace="~{fragments/layout :: layout(~{::content})}" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="content">
+    <div class="prose">
+        <p>Cauliflower is one of the major vegetables grown intensively by farmers in the Mylliem C&amp;RD Block of
+            East Khasi Hills. The local variety is in high demand, and the farmers of Sadew village have been supplying
+            it to the local market. Over the years, however, seed production of these local varieties declined because
+            of low temperatures during the vegetative stage, and farmers found it difficult to procure seed.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/cauliflowersadew1.jpg}"
+                 alt="Self-help group members in the polyhouse among flowering cauliflower plants grown for seed">
+            <figcaption>Members of Iabeitlang SHG in the cauliflower seed production polyhouse.</figcaption>
+        </figure>
+
+        <p>After assessing the problems in the field, KVK officials met progressive farmers in the village and
+            motivated them to form a self-help group, "Iabeitlang SHG", with 10 members. Under its president, Smti.
+            Skodora Kharkrang, a progressive farmer, the group functioned effectively. A few months later the KVK
+            provided training and method demonstrations on seed production technology in cauliflower, and a low-cost
+            polyhouse funded by the Agricultural Technology Management Agency (ATMA) at a cost of ₹1.70 lakh. Each
+            farmer contributed ₹1,110 towards inputs and labour for the entire production process.</p>
+
+        <figure class="figure">
+            <img th:src="@{/media/medium/images/success_stories/polyhouse.jpg}"
+                 alt="An official cutting the ribbon at the door of the new polyhouse">
+            <figcaption>Inauguration of the low-cost polyhouse.</figcaption>
+        </figure>
+
+        <h2>Results</h2>
+        <dl class="facts">
+            <dt>Polyhouse area</dt><dd>100 m²</dd>
+            <dt>Plants</dt><dd class="num">112</dd>
+            <dt>Seed produced</dt><dd>1.5 kg (average 10 g per plant)</dd>
+            <dt>Seed price</dt><dd>₹400 per 10 g</dd>
+            <dt>Net return to the group</dt><dd>₹44,800</dd>
+        </dl>
+        <p>With a contribution of ₹1,110 each, the farmers earned three times their investment in the first year,
+            giving them an alternative source of income. The members of Iabeitlang SHG also act as resource persons for
+            farmer-to-farmer dissemination of the technology through this demonstration unit.</p>
+    </div>
+</th:block>
+</body>
+</html>
